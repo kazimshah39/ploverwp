@@ -5,8 +5,8 @@
     let adminBarHeight = $("#wpadminbar").outerHeight()
     $("#wpadminbar").css("position", "fixed")
     $("#header").css("top", adminBarHeight)
-    $(".mobile-nav-toggle").css("top", adminBarHeight + 20)
-    $(".mobile-nav").css("top", adminBarHeight + 55)
+    $(".mobile-nav-toggle").css("top", adminBarHeight + 15)
+    $(".mobile-nav").css("top", adminBarHeight + 50)
   }
 
 })(jQuery);

@@ -31,7 +31,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Arsha</a></h1>
+      <h1 class="logo mr-auto"><a href="<?php home_url(); ?>">PloverWP</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -43,7 +43,6 @@
         'container_class' => 'nav-menu d-none d-md-block',
       ));
       ?>
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
 
     </div>
   </header>

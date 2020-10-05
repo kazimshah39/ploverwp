@@ -44,7 +44,7 @@ _x('Y', 'copyright date format', 'ploverwp')
 <!-- #site-footer -->
 
 <span class="back-to-top"><i></i></span>
-<div id="preloader"></div>
+<!-- <div id="preloader"></div> -->
 
 <?php wp_footer(); ?>
 
