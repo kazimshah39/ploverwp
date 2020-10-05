@@ -26,6 +26,8 @@
   <?php
   wp_body_open();
   ?>
+
+
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
@@ -38,7 +40,7 @@
         'theme_location' => 'primary',
         'depth' => 0, // 1 = no dropdowns, 2 = with dropdowns.
         'container' => 'nav',
-        'container_class' => 'nav-menu d-none d-lg-block',
+        'container_class' => 'nav-menu d-none d-md-block',
       ));
       ?>
       <a href="#about" class="get-started-btn scrollto">Get Started</a>
@@ -46,5 +48,4 @@
     </div>
   </header>
   <!-- End Header -->
-
   <div class="container site" style="top:6rem;position:relative">

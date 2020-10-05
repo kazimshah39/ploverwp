@@ -20,10 +20,10 @@
   // Mobile Navigation
   if ($('.nav-menu').length) {
     var $mobile_nav = $('.nav-menu').clone().prop({
-      class: 'mobile-nav d-lg-none'
+      class: 'mobile-nav d-md-none'
     });
     $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="ploverwp-navigation-menu"></i></button>');
+    $('body').prepend('<button type="button" class="mobile-nav-toggle d-md-none"><i class="ploverwp-navigation-menu"></i></button>');
     $('body').append('<div class="mobile-nav-overly"></div>');
 
 
