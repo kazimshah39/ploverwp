@@ -36,7 +36,6 @@
       <!--/#blog-->
     </div>
     <!--/.col-sm-7-->
-
     <?php if (is_active_sidebar('ploverwp_sidebar')) {
       ?>
       <div class="col-sm-4">

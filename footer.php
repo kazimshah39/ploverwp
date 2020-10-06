@@ -43,7 +43,7 @@ _x('Y', 'copyright date format', 'ploverwp')
 </footer>
 <!-- #site-footer -->
 
-<span class="back-to-top"><i></i></span>
+<span class="back-to-top"><i class="fas fa-arrow-up"></i></span>
 <!-- <div id="preloader"></div> -->
 
 <?php wp_footer(); ?>

@@ -23,20 +23,20 @@
       class: 'mobile-nav d-md-none'
     });
     $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" class="mobile-nav-toggle d-md-none"><i class="ploverwp-navigation-menu"></i></button>');
+    $('body').prepend('<button type="button" class="mobile-nav-toggle d-md-none"><i class="fas fa-bars"></i></button>');
     $('body').append('<div class="mobile-nav-overly"></div>');
 
 
     $(document).on('click', '.mobile-nav-toggle', function(e) {
       $('body').toggleClass('mobile-nav-active');
-      $('.mobile-nav-toggle i').toggleClass('ploverwp-navigation-menu ploverwp-close');
+      $('.mobile-nav-toggle i').toggleClass('fa-bars fa-times');
       $('.mobile-nav-overly').toggle();
     });
 
     $(document).on('click', '.mobile-nav .menu-item-has-children > a', function(e) {
       e.preventDefault();
       $(this).next().slideToggle(300);
-      $(this).parent().toggleClass('current-menu-item');
+      $(this).parent().toggleClass('current-m-item');
     });
 
     $(document).click(function(e) {
@@ -44,7 +44,7 @@
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('ploverwp-navigation-menu ploverwp-close');
+          $('.mobile-nav-toggle i').toggleClass('fa-bars fa-times');
           $('.mobile-nav-overly').fadeOut();
         }
       }
