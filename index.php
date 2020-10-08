@@ -26,14 +26,14 @@
         if (have_posts()) :
         while (have_posts()) :
         the_post();
-        get_template_part('template-parts/content', 'single');
+        get_template_part('template-parts/content');
         endwhile;
         endif;
         ?>
       </section>
       <!--/#blog-->
     </div>
-    <!--/.col-sm-7-->
+    <!--/.col-sm-8-->
 
     <?php if (is_active_sidebar('ploverwp_sidebar')) {
       ?>
