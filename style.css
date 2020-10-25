@@ -10,38 +10,57 @@ Text Domain: ploverwp
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-ul.meta-nav {
-    display: inline-block;
-    width: 100%;
-    color: #777;
-    font-size: 12px;
-    line-height: 1;
-    margin: 0 0 20px;
-    padding: 0;
-    list-style: none;
-}
-
-
-
-ul.meta-nav li {
-    float: left;
-    line-height: 1.3;
-}
-
-
-ul.meta-nav li i {
-    display: inline-block;
-    color: #929292;
-    padding-right: 5px;
-}
 
 img {
   height: auto;
   max-width: 100%;
 }
+
+/*--------------------------------------------------------------
+# Post Meta
+--------------------------------------------------------------*/
+
+ul.meta {
+      display: inline-block;
+      width: 100%;
+      color: #777;
+      font-size: 0.85rem;
+      line-height: 1;
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.meta li {
+      float: left;
+      line-height: 1.8;
+    }
+
+    ul.meta li:after {
+      content: "-";
+      padding: 0 6px;
+    }
+
+    ul.meta li:last-child:after {
+      display: none;
+      padding: 0;
+    }
+
+    ul.meta li a {
+      color: #777;
+    }
+
+    ul.meta li i {
+      display: inline-block;
+      color: #929292;
+      padding-right: 5px;
+    }
+
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+
 #preloader {
   position: fixed;
   top: 0;
