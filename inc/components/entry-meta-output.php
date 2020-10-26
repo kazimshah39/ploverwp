@@ -11,7 +11,6 @@ if (! class_exists('PloverWP_Entry_Meta_Output')) {
 
       global $post;
 
-      $categories_list = get_the_category_list(esc_html__(', ', 'ploverwp'));
       $number_comments = get_comments_number();
 
 
@@ -19,8 +18,7 @@ if (! class_exists('PloverWP_Entry_Meta_Output')) {
       <li>
       <span class="screen-reader-text">Post author:</span>
       <i class="far fa-user" aria-hidden="true"></i>
-      <a href="jjj" title="Posts by kazimshah39"
-        rel="author" itemprop="author" itemscope="itemscope" itemtype="https://schema.org/Person">
+      <a href="'. esc_html(get_author_posts_url(get_the_author_meta('ID'))) .'">
       ' . esc_html(get_the_author()) .
       '</a></li>
       <li>
@@ -31,7 +29,7 @@ if (! class_exists('PloverWP_Entry_Meta_Output')) {
       <li>
       <span class="screen-reader-text">Post category:</span>
       <i class="far fa-folder" aria-hidden="true"></i>'
-      . $categories_list .
+      . get_the_category_list(", ") .
       '</li>';
 
       if (comments_open()) {
