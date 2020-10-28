@@ -18,6 +18,9 @@
 
     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="h2 card-title"><?php the_title(); ?></a>
     <p class="card-text">
+      <small class="text-muted d-block mb-3">
+        <?php do_action('ploverwp_single_entry_meta'); ?>
+      </small>
       <?php the_excerpt(); ?>
     </p>
 

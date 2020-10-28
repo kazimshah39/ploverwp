@@ -29,7 +29,7 @@ if (! class_exists('PloverWP_Entry_Meta_Output')) {
       <li>
       <span class="screen-reader-text">Post category:</span>
       <i class="far fa-folder" aria-hidden="true"></i>'
-      . get_the_category_list(", ") .
+      . get_the_category_list(" / ") .
       '</li>';
 
       if (comments_open()) {
