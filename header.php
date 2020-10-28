@@ -47,4 +47,4 @@
     </div>
   </header>
   <!-- End Header -->
-  <div class="container site" style="top:6rem;position:relative">
+  <div class="container-fluid p-4 site" style="top:6rem;position:relative">

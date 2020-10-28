@@ -1,45 +1,54 @@
-.search-form label {
-	position: relative
+.widget a {
+  color: #28a745 !important;
+  text-decoration: none;
 }
 
-.search-form label::before {
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
-	right: 10px;
-	display: block;
-	font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f007";
-	color: #adb5bd
+#calendar_wrap table {
+  width: 100%;
+}
+.widget_calendar td, .widget_calendar th  {
+color: #3a3a3a;
+word-break: break-word;
+border-collapse: separate;
+border-spacing: 0;
+line-height: 2.1em;
+box-sizing: inherit;
+font-size: 100%;
+font-style: inherit;
+font-weight: inherit;
+margin: 0;
+outline: 0;
+vertical-align: baseline;
+border: 1px solid rgba(0,0,0,.1);
+border-width: 0 1px 1px 0;
+padding: 0;
+text-align: center;
+border-right: none;
+border-left: none;
+width: 14.2857%;
+}
+.widget_calendar #today {
+  background: #28a745;
+  color: #fff;
 }
 
-.search-form .search-submit {
-	display: none
-}
 
-.tg-menu-item-search {
-	position: relative
-}
-
-.tg-menu-item-search .search-form {
-	position: absolute;
-	top: 43px;
-	right: 0;
-	width: 200px;
-	display: none;
-	z-index: 999
-}
-
-.tg-menu-item-search .search-form label {
-	margin-bottom: 0;
-	width: 100%
-}
-
-a {
-	color: #16181a;
-	text-decoration: none
+.widget .gallery-item {
+color: #3a3a3a;
+word-break: break-word;
+line-height: 2;
+font-size: 100%;
+font-style: inherit;
+font-weight: inherit;
+box-sizing: inherit;
+display: inline-block;
+text-align: center;
+vertical-align: top;
+width: 100%;
+margin: 0;
+padding: 10px;
+border-radius: 2px;
+max-width: 33.33%;
 }
 
 
@@ -57,26 +66,6 @@ a {
 	word-wrap: normal!important
 }
 
-
-input[type="text"],
-input[type="email"],
-input[type="search"],
-textarea {
-	color: #16181a;
-	border: 1px solid #dee2e6;
-	padding: 0.7rem 1rem;
-	width: 100%;
-	border-radius: 0
-}
-
-input[type="search"] {
-	-webkit-appearance: none
-}
-
-label {
-	margin-bottom: 0.5rem;
-	display: inline-block
-}
 
 .widget {
 	margin: 0 0 2.5rem
@@ -111,6 +100,16 @@ label {
 	display: inline-block
 }
 
-.widget.widget_search .search-form label {
-	width: 100%
+.search-form {
+position: relative;
+}
+.search-field {
+padding: 0.7em;
+}
+
+.search-submit {
+padding: 0.5em 1em;
+position: absolute;
+right: 3px;
+bottom: 3px;
 }

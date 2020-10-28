@@ -2,8 +2,7 @@
 /**
 *  The template for displaying the sidebar.
 *
-*  @package WordPress
-*  @subpackage illdy
+* @package PloverWP
 */
 ?>
 <div class="col-sm-4">
