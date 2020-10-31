@@ -398,3 +398,65 @@ ul.meta {
   opacity: 1;
   visibility: visible;
 }
+
+
+/***********************
+**** Comments Area
+************************/
+.comments-count-wrapper {}
+
+.comments-title {
+line-height: 1.4;
+font-size: 1.4rem;
+font-weight: 400;
+word-wrap: break-word;
+}
+
+.comments-area {
+  margin-top: 2em;
+}
+
+.comment {
+  list-style-type: none;
+}
+
+.comment.depth-1 {
+  border-bottom: 1px solid #000;
+  margin-bottom: 2em;
+}
+
+.comment-body {
+  padding: 1em 0;
+}
+
+.comment-author .avatar {
+  float: left;
+  clear: right;
+  margin-right: 1.33333em;
+  border-radius: 50%;
+}
+
+.comment-author cite {
+  font-weight: bolder;
+  line-height: 1.6;
+  font-size: 0.8rem;
+}
+
+.comment-author .says {
+  display: none;
+}
+
+.comment-meta {
+  padding: 0 0 1.3em;
+  line-height: 1.6;
+  font-size: 0.8rem;
+}
+
+.comments-area .reply {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment .children {
+  margin-left: 1em;
+}

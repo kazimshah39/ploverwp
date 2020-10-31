@@ -25,3 +25,14 @@ add_action('widgets_init', 'ploverwp_widgets');
 require get_template_directory() . '/inc/template-tags.php';
 
 require_once(get_theme_file_path('/inc/components/entry-meta-output.php'));
+
+
+// For Development
+
+function show_template() {
+  if (is_super_admin()) {
+    global $template;
+    print_r($template);
+  }
+}
+add_action('wp_footer', 'show_template');
