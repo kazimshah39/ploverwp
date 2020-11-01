@@ -16,7 +16,7 @@
 
       <?php
     } ?>
-    <div style="padding:1rem 1rem 0 1rem" class="card-body">
+    <div class="card-body px-3 pb-0">
       <h5 class="card-title"><?php the_title(); ?></h5>
       <p class="card-text">
         <small class="text-muted">

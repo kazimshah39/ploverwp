@@ -1,6 +1,6 @@
 <?php
 /**
-* The template for displaying the single.
+* The template for displaying the page.
 *
 * @package PloverWP
 */
@@ -28,7 +28,8 @@
         if (have_posts()) :
         while (have_posts()) :
         the_post();
-        get_template_part('template-parts/content', 'single');
+        the_title('<h3 class="mb-4">', '</h3>');
+        the_content();
         endwhile;
         endif;
         ?>
@@ -46,6 +47,7 @@
       <?php
     } ?>
   </div>
-  <!--/.row-->
+</div>
+<!--/.row-->
 
-  <?php get_footer(); ?>
+<?php get_footer(); ?>
