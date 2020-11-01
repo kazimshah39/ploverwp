@@ -37,13 +37,13 @@ if (! class_exists('PloverWP_Entry_Meta_Output')) {
           $output .= '<li><span class="screen-reader-text">Post comments:</span><i class="far fa-comment" aria-hidden="true"></i>' . __('No comments', 'ploverwp') . '</li>';
         } else {
           if ($number_comments > 1) {
-            $output .= '<li><span class="screen-reader-text">Post comments:</span><i class="far fa-comment" aria-hidden="true"></i><a href=". get_comments_link() ." title=". $number_comments . ' . __('comments', 'ploverwp') . '">. $number_comments . ' . __('comments', 'ploverwp') . '</a></li>';
+            $output .= '<li><span class = "screen-reader-text"> Post comments: </span><i class="far fa-comment" aria-hidden ="true"></i><a href ="'. get_comments_link() .'">' . __($number_comments . ' comments', 'ploverwp') . ' </a></li> ';
           } else {
-            $output .= '<li><span class="screen-reader-text">Post comments:</span><i class="far fa-comment" aria-hidden="true"></i><a href=". get_comments_link() ." title="' . __('1 comment', 'ploverwp') . '">' . __('1 comment', 'ploverwp') . '</a></li>';
+            $output .= '<li><span class = "screen-reader-text"> Post comments: </span><i class="far fa-comment" aria-hidden ="true"></i><a href= "'. get_comments_link() .'">' . __('1 comment', 'ploverwp') . ' </a></li> ';
           }
         }
       } else {
-        $output .= '<li><span class="screen-reader-text">Post comments:</span><i class="far fa-comment" aria-hidden="true"></i>' . __('Comments are off for this post', 'ploverwp') . '</li>';
+        $output .= '<li><span class="screen-reader-text"> Post comments: </span><i class="far fa-comment" aria-hidden="true"></i>' . __('Comments are off for this post', 'ploverwp') . '</li>';
       }
 
       $output .= '</ul>';
