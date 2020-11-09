@@ -47,4 +47,4 @@
     </div>
   </header>
   <!-- End Header -->
-  <div class="container-fluid p-4 position-relative" style="margin-top:6rem;">
+  <div id="site-content" class="container-fluid position-relative" style="padding:6rem 1.5rem 1.5rem 1.5rem;">

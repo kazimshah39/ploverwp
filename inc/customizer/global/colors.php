@@ -32,9 +32,9 @@ $wp_customize->add_control(
   )
 );
 
-// Background Color
+// Text Color
 $wp_customize->add_setting(
-  'background_color',
+  'text_color',
   array(
     'default' => '#ffffff',
     'sanitize_callback' => 'sanitize_hex_color',
@@ -47,7 +47,101 @@ $wp_customize->add_control(
   new WP_Customize_Color_Control(
 
     $wp_customize,
-    'background_color',
+    'text_color',
+    array(
+      'label' => __('Text Color', 'ploverwp'),
+      'section' => 'section-colors',
+    )
+  )
+);
+
+// Link Color
+$wp_customize->add_setting(
+  'link_color',
+  array(
+    'default' => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage',
+  )
+);
+
+$wp_customize->add_control(
+
+  new WP_Customize_Color_Control(
+
+    $wp_customize,
+    'link_color',
+    array(
+      'label' => __('Link Color', 'ploverwp'),
+      'section' => 'section-colors',
+    )
+  )
+);
+
+// Link Hover Color
+
+$wp_customize->add_setting(
+  'link_hover_color',
+  array(
+    'default' => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage',
+  )
+);
+
+$wp_customize->add_control(
+
+  new WP_Customize_Color_Control(
+
+    $wp_customize,
+    'link_hover_color',
+    array(
+      'label' => __('Link Hover Color', 'ploverwp'),
+      'section' => 'section-colors',
+    )
+  )
+);
+
+// Heading Color
+
+$wp_customize->add_setting(
+  'heading_color',
+  array(
+    'default' => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage',
+  )
+);
+
+$wp_customize->add_control(
+
+  new WP_Customize_Color_Control(
+
+    $wp_customize,
+    'heading_color',
+    array(
+      'label' => __('Heading Color', 'ploverwp'),
+      'section' => 'section-colors',
+    )
+  )
+);
+
+// Background Color
+$wp_customize->add_setting(
+  'site_background_color',
+  array(
+    'default' => '#ffffff',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'transport' => 'postMessage',
+  )
+);
+
+$wp_customize->add_control(
+
+  new WP_Customize_Color_Control(
+
+    $wp_customize,
+    'site_background_color',
     array(
       'label' => __('Background Color', 'ploverwp'),
       'section' => 'section-colors',

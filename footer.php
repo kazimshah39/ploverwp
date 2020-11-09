@@ -10,7 +10,7 @@
 <!--/.container .site-->
 
 <!-- Footer -->
-<footer>
+<footer id="footer">
 
 
 <!-- Footer Links -->
