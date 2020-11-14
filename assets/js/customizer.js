@@ -1,24 +1,19 @@
 (function($) {
 
-  // Background Color
-  wp.customize('site_background_color', function(value) {
-    value.bind(function(to) {
-      $('#site-content').css('background', to);
-    });
-  });
+  const customizePreview = (obj) => {
+    Object.keys(obj).forEach(key => {
+      wp.customize(obj[key].setting, function(value) {
+        value.bind(function(to) {
+          $(obj[key].el).css(obj[key].style, to);
+        });
+      });
+    })
+  }
 
-  // Header Background Color
-  wp.customize('header_background_color', function(value) {
-    value.bind(function(to) {
-      $('#header').css('background-color', to);
-    });
-  });
 
-  // Footer Background Color
-  wp.customize('footer_background_color', function(value) {
-    value.bind(function(to) {
-      $('#footer').css('background-color', to);
-    });
-  });
+  customizePreview(ploverwpPreviewEls.content)
+  customizePreview(ploverwpPreviewEls.header)
+  customizePreview(ploverwpPreviewEls.footer)
+
 
 })(jQuery);

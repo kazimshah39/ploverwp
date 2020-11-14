@@ -20,18 +20,22 @@ if (! class_exists('PloverWP_Customize')) {
     */
     public static function register($wp_customize) {
 
-      /**
-      * Global Panel
-      * => Colors Section
-      */
-
-
-
       // Include Panels
       require get_template_directory() . '/inc/customizer/panels.php';
 
-      // Include Colors Section (Global Panel)
-      require get_template_directory() . '/inc/customizer/global/colors.php';
+      /**
+      * Colors Panel
+      */
+
+      // Include Base Section (Colors Panel)
+      require get_template_directory() . '/inc/customizer/colors/base-colors.php';
+
+      // Include Header Section (Colors Panel)
+      require get_template_directory() . '/inc/customizer/colors/header-colors.php';
+
+      // Include Footer Section (Colors Panel)
+      require get_template_directory() . '/inc/customizer/colors/footer-colors.php';
+
     }
   }
 

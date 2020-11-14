@@ -16,7 +16,7 @@
   } ?>
   <div class="card-body">
 
-    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="h2 card-title text-dark"><?php the_title(); ?></a>
+    <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="card-title"><?php the_title(); ?></a></h2>
     <p class="card-text">
       <small class="text-muted d-block mb-3">
         <?php do_action('ploverwp_single_entry_meta'); ?>
