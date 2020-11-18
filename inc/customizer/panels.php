@@ -1,14 +1,5 @@
 <?php
 
-// Global
-$wp_customize->add_panel(
-  'panel-global',
-  array(
-    'title' => __('Global', 'ploverwp'),
-    'priority' => 1,
-    'capability' => 'edit_theme_options',
-  )
-);
 
 // Colors
 
