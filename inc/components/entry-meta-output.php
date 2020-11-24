@@ -4,7 +4,7 @@ if (! class_exists('PloverWP_Entry_Meta_Output')) {
 
   class PloverWP_Entry_Meta_Output {
     function __construct() {
-      add_action('ploverwp_single_entry_meta', array($this, 'single_entry_meta'));
+      add_action('ploverwp_single_entry_meta', [$this, 'single_entry_meta']);
     }
 
     function single_entry_meta() {

@@ -1,7 +1,7 @@
 <?php
 
 function ploverwp_widgets() {
-  register_sidebar(array(
+  register_sidebar([
     'name' => __('Sidebar', 'ploverwp'),
     'id' => 'ploverwp_sidebar',
     'description' => __('Sidebar for PloverWP theme', 'ploverwp'),
@@ -9,5 +9,5 @@ function ploverwp_widgets() {
     'after_widget' => '</aside>',
     'before_title' => '<div class="widget-title"><h5>',
     'after_title' => '</h5></div>'
-  ));
+  ]);
 }

@@ -11,8 +11,8 @@
     <?php if (has_post_thumbnail()) {
       ?>
 
-      <?php the_post_thumbnail('full', array(
-        'class' => 'card-img-top')); ?>
+      <?php the_post_thumbnail('full', [
+        'class' => 'card-img-top']); ?>
 
       <?php
     } ?>
@@ -29,10 +29,10 @@
     <?php
     the_content();
 
-    wp_link_pages(array(
+    wp_link_pages([
       'before' => '<div class="page-link">' . __('Pages:', 'ploverwp'),
       'after' => '</div><!--/.page-link-->',
-    ));
+    ]);
     ?>
   </div>
   <!--/.my-class-->

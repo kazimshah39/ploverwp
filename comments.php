@@ -30,17 +30,17 @@ if (have_comments()) {
     </div>
 
 
-    <?php wp_list_comments(array('avatar_size' => 50)); ?>
+    <?php wp_list_comments(['avatar_size' => 50]); ?>
   </div>
   <?php
 }
 
 
-comment_form(array(
+comment_form([
   'comment_field' => '
     <textarea class="form-control" name="comment" rows="5" placeholder="' .  __('Type here...', 'ploverwp') . '"></textarea>
     ',
-  'fields' => array(
+  'fields' => [
     'author' => '
         <input type="text" name="author" class="form-control mt-3" placeholder="' .  __('Name*', 'ploverwp') . '">
         ',
@@ -50,9 +50,9 @@ comment_form(array(
     'url' => '
     <input type="url" name="url" class="form-control mt-3" placeholder="Website">
     </br>'
-  ),
+  ],
   'class_submit' => 'btn btn-outline-success',
   'title_reply' => __('Leave a Comment', 'ploverwp')
 
-));
+]);
 ?>

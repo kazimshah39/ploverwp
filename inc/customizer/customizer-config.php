@@ -23,11 +23,11 @@ if (! function_exists('ploverwp_customizer_config')) {
 
         $wp_customize->add_section(
           $section['id'],
-          array(
+          [
             'title' => __($section['title'], 'ploverwp'),
             'priority' => $section['priority'],
             'panel' => $section['panel']
-          )
+          ]
         );
 
       }
@@ -41,11 +41,11 @@ if (! function_exists('ploverwp_customizer_config')) {
         // add_setting
         $wp_customize->add_setting(
           $val['id'],
-          array(
+          [
             'default' => $val['default'],
             'sanitize_callback' => $val['sanitize'],
             'transport' => $val['transport'],
-          )
+          ]
         );
 
         // add_control
@@ -55,10 +55,10 @@ if (! function_exists('ploverwp_customizer_config')) {
 
             $wp_customize,
             $val['id'],
-            array(
+            [
               'label' => __($val['label'], 'ploverwp'),
               'section' => $val['section'],
-            )
+            ]
           )
         );
 
