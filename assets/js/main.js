@@ -3,19 +3,21 @@
 
   function headerMarginTop() {
     let adminBarHeight = $("#wpadminbar").outerHeight();
+    let headerHeight = $("#header").outerHeight();
     $("#wpadminbar").css("position", "fixed");
     $("#header").css("top", adminBarHeight);
-    $(".mobile-nav-toggle").css("top", adminBarHeight + 15);
-    $(".mobile-nav").css("top", adminBarHeight + 50);
+    $(".mobile-nav").css("top", headerHeight/1.4+adminBarHeight);
   }
 
-  if ($("#wpadminbar") && $("#wpadminbar").css("display") != "none") {
+  if ($("#wpadminbar").length && $("#wpadminbar").css("display") != "none") {
 
     headerMarginTop();
 
     $(window).resize(function () {
       headerMarginTop();
     });
+  } else {
+    $(".mobile-nav").css("top", $("#header").outerHeight()/1.4);
   }
 
 

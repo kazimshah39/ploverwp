@@ -22,9 +22,9 @@
     var $mobile_nav = $('.nav-menu').clone().prop({
       class: 'mobile-nav d-md-none'
     });
-    $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" class="mobile-nav-toggle d-md-none"><i class="fas fa-bars"></i></button>');
-    $('body').append('<div class="mobile-nav-overly"></div>');
+    $('#header .header-inner').append($mobile_nav);
+    $('#header .header-inner').append('<button type="button" class="mobile-nav-toggle d-md-none"><i class="fas fa-bars"></i></button>');
+    $('#header .header-inner').append('<div class="mobile-nav-overly"></div>');
 
 
     $(document).on('click', '.mobile-nav-toggle', function(e) {

@@ -17,6 +17,11 @@ if (! function_exists('ploverwp_header_colors_el')) {
           'style' => 'color',
           'selector' => '.site-title a',
         ],
+        'tagline' => [
+          'setting' => 'ploverwp_header_tagline',
+          'style' => 'color',
+          'selector' => '.site-description',
+        ],
       ]
     ];
   }

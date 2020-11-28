@@ -20,6 +20,14 @@ if (! function_exists('ploverwp_header_colors_config')) {
           'label' => 'Site Title Color',
           'section' => 'section-header-colors',
         ],
+        'tagline' => [
+          'id' => 'ploverwp_header_tagline',
+          'default' => '#ffffff',
+          'sanitize' => 'sanitize_hex_color',
+          'transport' => 'postMessage',
+          'label' => 'Tagline Color',
+          'section' => 'section-header-colors',
+        ],
       ]
     ];
   }

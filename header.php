@@ -29,9 +29,9 @@
 
 
   <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center">
+    <div class="header-inner container d-flex align-items-center justify-content-between">
 
-      <div class="mr-auto">
+      <div>
         <h1 class="site-title m-0"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></h1>
         <p class="site-description m-0" itemprop="description">
           <?php bloginfo('description'); ?>

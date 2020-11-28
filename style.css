@@ -141,7 +141,7 @@ ul.meta {
 # Header
 --------------------------------------------------------------*/
 #header {
-  transition: all 0.5s;
+  /*transition: all 0.5s;*/
   z-index: 997;
   padding: 15px 0;
 }
@@ -290,7 +290,6 @@ ul.meta {
 
 .mobile-nav-toggle {
   position: fixed;
-  top: 15px;
   right: 15px;
   z-index: 9998;
   border: 0;
@@ -309,7 +308,6 @@ ul.meta {
 
 .mobile-nav {
   position: fixed;
-  top: 50px;
   right: 15px;
   bottom: 15px;
   left: 15px;
