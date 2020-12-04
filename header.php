@@ -28,7 +28,7 @@
   ?>
 
 
-  <header id="header" class="fixed-top ">
+  <header id="header">
     <div class="header-inner container d-flex align-items-center justify-content-between">
 
       <div>
@@ -39,7 +39,8 @@
       </div>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+      <button type="button" class="mobile-nav-toggle d-md-none"><i class="fas fa-bars"></i></button>
+      <div class="mobile-nav-overly"></div>
       <?php
       wp_nav_menu([
         'theme_location' => 'primary',
@@ -52,4 +53,4 @@
     </div>
   </header>
   <!-- End Header -->
-  <div id="site-content" class="container-fluid position-relative" style="padding:6rem 1.5rem 1.5rem 1.5rem;">
+  <div id="site-content" class="container-fluid">

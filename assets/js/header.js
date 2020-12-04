@@ -1,43 +1,29 @@
-/**
-* Template Name: Arsha - v3.0.0
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-!(function($) {
-  "use strict";
-
-  // Preloader
-  $(window).on('load', function() {
-    if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function() {
-        $(this).remove();
-      });
-    }
-  });
+(function($) {
 
 
   // Mobile Navigation
+
   if ($('.nav-menu').length) {
     var $mobile_nav = $('.nav-menu').clone().prop({
       class: 'mobile-nav d-md-none'
     });
     $('#header .header-inner').append($mobile_nav);
-    $('#header .header-inner').append('<button type="button" class="mobile-nav-toggle d-md-none"><i class="fas fa-bars"></i></button>');
-    $('#header .header-inner').append('<div class="mobile-nav-overly"></div>');
 
+    $(document).on('click',
+      '.mobile-nav-toggle',
+      function(e) {
+        $('body').toggleClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('fa-bars fa-times');
+        $('.mobile-nav-overly').toggle();
+      });
 
-    $(document).on('click', '.mobile-nav-toggle', function(e) {
-      $('body').toggleClass('mobile-nav-active');
-      $('.mobile-nav-toggle i').toggleClass('fa-bars fa-times');
-      $('.mobile-nav-overly').toggle();
-    });
-
-    $(document).on('click', '.mobile-nav .menu-item-has-children > a', function(e) {
-      e.preventDefault();
-      $(this).next().slideToggle(300);
-      $(this).parent().toggleClass('current-m-item');
-    });
+    $(document).on('click',
+      '.mobile-nav .menu-item-has-children > a',
+      function(e) {
+        e.preventDefault();
+        $(this).next().slideToggle(300);
+        $(this).parent().toggleClass('current-m-item');
+      });
 
     $(document).click(function(e) {
       var container = $(".mobile-nav, .mobile-nav-toggle");
@@ -53,40 +39,21 @@
     $(".mobile-nav, .mobile-nav-toggle").hide();
   }
 
-  // Navigation active state on scroll
-  var nav_sections = $('section');
-  var main_nav = $('.nav-menu, #mobile-nav');
 
-  $(window).on('scroll', function() {
-    var cur_pos = $(this).scrollTop() + 200;
 
-    nav_sections.each(function() {
-      var top = $(this).offset().top,
-      bottom = top + $(this).outerHeight();
+  if ($('body').hasClass("sticky-header-enabled")) {
 
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
-          main_nav.find('li').removeClass('current-menu-item');
-        }
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('current-menu-item');
-      }
-      if (cur_pos < 300) {
-        $(".nav-menu ul:first li:first").addClass('current-menu-item');
+    // Toggle .header-scrolled class to #header when page is scrolled
+
+    $('#header').addClass('fixed-top');
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('#header').addClass('header-scrolled');
+      } else {
+        $('#header').removeClass('header-scrolled');
       }
     });
-  });
 
-  // Toggle .header-scrolled class to #header when page is scrolled
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('#header').addClass('header-scrolled');
-    } else {
-      $('#header').removeClass('header-scrolled');
-    }
-  });
-
-  if ($(window).scrollTop() > 100) {
-    $('#header').addClass('header-scrolled');
   }
 
   // Back to top button
@@ -104,6 +71,53 @@
       behavior: 'smooth'
     })
   })
+
+
+  // Set sticky header and #site-content margin top
+
+  if ($('body').hasClass("sticky-header-enabled")) {
+
+    var adminBarHeight = $("#wpadminbar").outerHeight();
+    var headerHeight = $("#header").outerHeight();
+
+    function stickyHeaderMarginTop() {
+
+      $("#wpadminbar").css("position",
+        "fixed");
+      $("#header").css("top",
+        adminBarHeight);
+      $(".mobile-nav").css("top",
+        headerHeight/1.4+adminBarHeight);
+
+      $("#site-content").css("margin-top",
+        headerHeight+32);
+    }
+    if ($("#wpadminbar").length && $("#wpadminbar").css("display") != "none") {
+
+      stickyHeaderMarginTop();
+
+      $(window).resize(function () {
+        stickyHeaderMarginTop();
+      });
+    } else {
+
+      $("#site-content").css("margin-top", headerHeight+32);
+      $(".mobile-nav").css("top", headerHeight/1.4);
+    }
+  } else {
+
+    $(".mobile-nav").css("top", $("#header").outerHeight()/1.4);
+  }
+
+  // Preloader
+  $(window).on('load', function() {
+    if ($('#preloader').length) {
+      $('#preloader').delay(100).fadeOut('slow', function() {
+        $(this).remove();
+      });
+    }
+  });
+
 
 
 })(jQuery);

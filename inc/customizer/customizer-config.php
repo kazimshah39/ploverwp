@@ -38,29 +38,57 @@ if (! function_exists('ploverwp_customizer_config')) {
     foreach (ploverwp_get_settings_and_controls() as $nested) {
       foreach ($nested as $val) {
 
-        // add_setting
-        $wp_customize->add_setting(
-          $val['id'],
-          [
-            'default' => $val['default'],
-            'sanitize_callback' => $val['sanitize'],
-            'transport' => $val['transport'],
-          ]
-        );
+        switch ($val['control']) {
 
-        // add_control
-        $wp_customize->add_control(
+          case "color":
 
-          new WP_Customize_Color_Control(
+            $wp_customize->add_setting(
+              $val['id'],
+              [
+                'default' => $val['default'],
+                'sanitize_callback' => 'sanitize_hex_color',
+                'transport' => $val['transport'],
+              ]
+            );
 
-            $wp_customize,
-            $val['id'],
-            [
-              'label' => __($val['label'], 'ploverwp'),
-              'section' => $val['section'],
-            ]
-          )
-        );
+            $wp_customize->add_control(
+              new WP_Customize_Color_Control(
+                $wp_customize,
+                $val['id'],
+                [
+                  'label' => __($val['label'], 'ploverwp'),
+                  'description' => __($val['description'], 'ploverwp'),
+                  'section' => $val['section'],
+                ]
+              )
+            );
+
+            break;
+
+          case "checkbox":
+
+            $wp_customize->add_setting(
+              $val['id'],
+              [
+                //  'default' => 0,
+                // 'sanitize_callback' => 'sanitize_hex_color',
+                'transport' => $val['transport'],
+              ]
+            );
+
+
+            $wp_customize->add_control(
+              $val['id'],
+              [
+                'type' => 'checkbox',
+                'label' => __($val['label'], 'ploverwp'),
+                'description' => __($val['description'], 'ploverwp'),
+                'section' => $val['section']
+              ]
+            );
+
+            break;
+        }
 
       }
     }

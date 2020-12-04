@@ -11,3 +11,14 @@ $wp_customize->add_panel(
     'capability' => 'edit_theme_options',
   ]
 );
+
+// Header
+
+$wp_customize->add_panel(
+  'panel-header',
+  [
+    'title' => __('Header', 'ploverwp'),
+    'priority' => 3,
+    'capability' => 'edit_theme_options',
+  ]
+);

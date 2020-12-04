@@ -4,7 +4,7 @@
 require get_template_directory() . '/inc/customizer/custom-css.php';
 
 
-function ploverwp_register_scripts() {
+function ploverwp_front_end_scripts() {
 
   // Add bootstrap css
   wp_enqueue_style('font-awesome', get_theme_file_uri('/assets/css/all.min.css'), [], microtime());

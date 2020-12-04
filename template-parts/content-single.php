@@ -6,6 +6,7 @@
 */
 
 ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
   <div class="card mb-3">
     <?php if (has_post_thumbnail()) {
@@ -23,23 +24,21 @@
           <?php do_action('ploverwp_single_entry_meta'); ?>
         </small>
       </p>
+
+      <?php
+      the_content();
+
+      wp_link_pages([
+        'before' => '<div class="page-link">' . __('Pages:', 'ploverwp'),
+        'after' => '</div><!--/.page-link-->',
+      ]);
+      ?>
     </div>
   </div>
-  <div class="my-class">
-    <?php
-    the_content();
-
-    wp_link_pages([
-      'before' => '<div class="page-link">' . __('Pages:', 'ploverwp'),
-      'after' => '</div><!--/.page-link-->',
-    ]);
-    ?>
-  </div>
-  <!--/.my-class-->
+  <!--/.card-->
 
   <?php
   if (comments_open() || get_comments_number()) :
   comments_template();
-  endif;
-  ?>
+  endif; ?>
 </article>
