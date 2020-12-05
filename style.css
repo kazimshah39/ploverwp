@@ -11,6 +11,9 @@ Text Domain: ploverwp
 /*--------------------------------------------------------------
 # Global
 --------------------------------------------------------------*/
+.sticky-header-enabled #wpadminbar {
+  position: fixed !important;
+}
 body {
   background: #f5f5f5;
 }
@@ -154,13 +157,23 @@ ul.meta {
   padding: 15px 0;
 }
 
+.sticky-header-enabled #wpadminbar ~ #header {
+  top: 46px;
+}
+
+@media screen and (min-width: 782px) {
+  .sticky-header-enabled #wpadminbar ~ #header {
+    top: 32px;
+}
+}
+
+
 .site-title a, .site-description, .nav-menu li a, .mobile-nav-toggle i {
   color: #000000;
 }
 
-#header.header-scrolled, #header.header-inner-pages {
+#header.header-scrolled {
   /* Sticky Header color after scroll */
-background: red;
   
 }
 
@@ -229,7 +242,6 @@ background: red;
   padding: 10px 0;
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
 }
 
 .nav-menu .menu-item-has-children:hover > ul {

@@ -53,4 +53,4 @@
     </div>
   </header>
   <!-- End Header -->
-  <div id="site-content" class="container-fluid">
+  <div id="site-content" class="container-lg">

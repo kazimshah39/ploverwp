@@ -45,7 +45,7 @@
 
     // Toggle .header-scrolled class to #header when page is scrolled
 
-    $('#header').addClass('fixed-top');
+    $('#header').addClass('sticky-top');
     $(window).scroll(function() {
       if ($(this).scrollTop() > 100) {
         $('#header').addClass('header-scrolled');
@@ -72,42 +72,14 @@
     })
   })
 
+  // Set .mobile-nav margin top
 
-  // Set sticky header and #site-content margin top
-
-  if ($('body').hasClass("sticky-header-enabled")) {
-
-    var adminBarHeight = $("#wpadminbar").outerHeight();
-    var headerHeight = $("#header").outerHeight();
-
-    function stickyHeaderMarginTop() {
-
-      $("#wpadminbar").css("position",
-        "fixed");
-      $("#header").css("top",
-        adminBarHeight);
-      $(".mobile-nav").css("top",
-        headerHeight/1.4+adminBarHeight);
-
-      $("#site-content").css("margin-top",
-        headerHeight+32);
-    }
-    if ($("#wpadminbar").length && $("#wpadminbar").css("display") != "none") {
-
-      stickyHeaderMarginTop();
-
-      $(window).resize(function () {
-        stickyHeaderMarginTop();
-      });
-    } else {
-
-      $("#site-content").css("margin-top", headerHeight+32);
-      $(".mobile-nav").css("top", headerHeight/1.4);
-    }
+  if ($("#wpadminbar").length) {
+    $(".mobile-nav").css("top", $("#header").outerHeight()/1.4+$("#wpadminbar").outerHeight());
   } else {
-
     $(".mobile-nav").css("top", $("#header").outerHeight()/1.4);
   }
+
 
   // Preloader
   $(window).on('load', function() {
