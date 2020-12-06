@@ -5,26 +5,29 @@
 * @package PloverWP
 */
 ?>
-<article class="card mb-2">
-  <?php if (has_post_thumbnail()) {
-    ?>
-    <div class="card-img-top">
-      <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+<article>
+  <div class="card mb-2">
+    <?php if (has_post_thumbnail()) {
+      ?>
+      <div class="card-img-top">
+        <a href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+      </div>
+      <!--/.card-img-top-->
+      <?php
+    } ?>
+    <div class="card-body">
+      <header id="entry-header">
+        <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="card-title entry-title-link"><?php the_title(); ?></a></h2>
+        <p class="card-text">
+          <small class="entry-meta text-muted d-block mb-3">
+            <?php do_action('ploverwp_single_entry_meta'); ?>
+          </small>
+        </header>
+        <div id="entry-content">
+          <?php the_excerpt(); ?>
+        </p>
+        <a href="<?php the_permalink(); ?>" title="<?php _e('Read more', 'ploverwp'); ?>" class="btn btn-success read-more"><?php _e('Read more', 'ploverwp'); ?></a>
+      </div>
     </div>
-    <!--/.card-img-top-->
-    <?php
-  } ?>
-  <div class="card-body">
-
-    <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="card-title"><?php the_title(); ?></a></h2>
-    <p class="card-text">
-      <small class="text-muted d-block mb-3">
-        <?php do_action('ploverwp_single_entry_meta'); ?>
-      </small>
-      <?php the_excerpt(); ?>
-    </p>
-
-    <a href="<?php the_permalink(); ?>" title="<?php _e('Read more', 'ploverwp'); ?>" class="btn btn-success"><?php _e('Read more', 'ploverwp'); ?></a>
   </div>
 </article>
-<!--/#post-<?php the_ID(); ?>.blog-post-->

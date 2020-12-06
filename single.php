@@ -23,7 +23,7 @@
         <?php
       } ?>
 
-      <section id="blog">
+      <section id="content">
         <?php
         if (have_posts()) :
         while (have_posts()) :

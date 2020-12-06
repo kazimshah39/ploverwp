@@ -10,22 +10,22 @@ if (! function_exists('ploverwp_base_colors_el')) {
         'text' => [
           'setting' => 'ploverwp_text_color',
           'style' => 'color',
-          'selector' => '#site-content, .entry-title a, .entry-title a:hover',
+          'selector' => '#site-content, .entry-title a, .entry-title a:hover, #sidebar h5',
         ],
         'link' => [
           'setting' => 'ploverwp_link_color',
           'style' => 'color',
-          'selector' => '#site-content a',
+          'selector' => '#entry-content a:not(.read-more), #comments a, #sidebar a',
         ],
         'link-hover' => [
           'setting' => 'ploverwp_link_hover_color',
           'style' => 'color',
-          'selector' => '#site-content a:hover',
+          'selector' => '#entry-content a:hover:not(.read-more), #comments a:hover, #sidebar a:hover',
         ],
         'heading' => [
           'setting' => 'ploverwp_heading_color',
           'style' => 'color',
-          'selector' => '#site-content h1,#site-content h2,#site-content h3,#site-content h4,#site-content h5,#site-content h6',
+          'selector' => '#content h1, #content h2, #content h3, #content h4, #content h5, #content h6'
         ],
         'background' => [
           'setting' => 'ploverwp_background_color',

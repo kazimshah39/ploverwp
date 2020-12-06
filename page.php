@@ -23,7 +23,7 @@
         <?php
       } ?>
 
-      <section id="blog">
+      <section id="content">
         <?php
         if (have_posts()) :
         while (have_posts()) :
@@ -34,7 +34,7 @@
         endif;
         ?>
       </section>
-      <!--/#blog-->
+      <!--/#page-content-->
     </div>
     <!--/.col-sm-7-->
     <?php if (is_active_sidebar('ploverwp_sidebar')) {
