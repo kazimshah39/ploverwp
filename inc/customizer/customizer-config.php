@@ -11,6 +11,10 @@ require get_template_directory() . '/inc/customizer/config/get_settings_and_cont
 if (! function_exists('ploverwp_customizer_config')) {
   function ploverwp_customizer_config($wp_customize) {
 
+    // Customizer Custom Controls
+
+    require get_template_directory() . '/inc/customizer/customizer-controls.php';
+
     // add_panel
 
     require get_template_directory() . '/inc/customizer/panels.php';
@@ -18,78 +22,85 @@ if (! function_exists('ploverwp_customizer_config')) {
 
     // add_section
 
-    foreach (ploverwp_get_sections() as $nested) {
-      foreach ($nested as $section) {
+    foreach (ploverwp_get_sections() as $section) {
 
-        $wp_customize->add_section(
-          $section['id'],
-          [
-            'title' => __($section['title'], 'ploverwp'),
-            'priority' => $section['priority'],
-            'panel' => $section['panel']
-          ]
-        );
-
-      }
+      $wp_customize->add_section(
+        $section['id'],
+        [
+          'title' => __($section['title'], 'ploverwp'),
+          'priority' => $section['priority'],
+          'panel' => $section['panel']
+        ]
+      );
     }
 
     // add_setting & add_control
 
-    foreach (ploverwp_get_settings_and_controls() as $nested) {
-      foreach ($nested as $val) {
+    foreach (ploverwp_get_settings_and_controls() as $val) {
 
-        switch ($val['control']) {
+      switch ($val['control']) {
 
-          case "color":
+        case "color":
 
-            $wp_customize->add_setting(
+          $wp_customize->add_setting(
+            $val['id'],
+            [
+              'default' => $val['default'],
+              'sanitize_callback' => 'sanitize_hex_color',
+              'transport' => $val['transport'],
+            ]
+          );
+
+          $wp_customize->add_control(
+            new WP_Customize_Color_Control(
+              $wp_customize,
               $val['id'],
               [
-                'default' => $val['default'],
-                'sanitize_callback' => 'sanitize_hex_color',
-                'transport' => $val['transport'],
-              ]
-            );
-
-            $wp_customize->add_control(
-              new WP_Customize_Color_Control(
-                $wp_customize,
-                $val['id'],
-                [
-                  'label' => __($val['label'], 'ploverwp'),
-                  'description' => __($val['description'], 'ploverwp'),
-                  'section' => $val['section'],
-                ]
-              )
-            );
-
-            break;
-
-          case "checkbox":
-
-            $wp_customize->add_setting(
-              $val['id'],
-              [
-                //  'default' => 0,
-                // 'sanitize_callback' => 'sanitize_hex_color',
-                'transport' => $val['transport'],
-              ]
-            );
-
-
-            $wp_customize->add_control(
-              $val['id'],
-              [
-                'type' => 'checkbox',
                 'label' => __($val['label'], 'ploverwp'),
                 'description' => __($val['description'], 'ploverwp'),
-                'section' => $val['section']
+                'section' => $val['section'],
               ]
-            );
+            )
+          );
 
-            break;
-        }
+          break;
 
+        case "checkbox":
+
+          $wp_customize->add_setting(
+            $val['id'],
+            [
+              //  'default' => 0,
+              // 'sanitize_callback' => 'sanitize_hex_color',
+              'transport' => $val['transport'],
+            ]
+          );
+
+
+          $wp_customize->add_control(
+            $val['id'],
+            [
+              'type' => 'checkbox',
+              'label' => __($val['label'], 'ploverwp'),
+              'description' => __($val['description'], 'ploverwp'),
+              'section' => $val['section']
+            ]
+          );
+
+          break;
+
+        case "divider":
+
+          $wp_customize->add_control(new PloverWP_Control_Divider(
+            $wp_customize, $val['id'],
+            [
+              'label' => __($val['label'], 'ploverwp'),
+              'section' => $val['section'],
+              'settings' => []
+            ]
+          ));
+
+          break;
       }
     }
 

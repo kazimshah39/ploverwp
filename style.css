@@ -37,40 +37,40 @@ a {
 --------------------------------------------------------------*/
 
 ul.meta {
-      display: inline-block;
-      width: 100%;
-      color: #777;
-      font-size: 0.85rem;
-      line-height: 1;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+  display: inline-block;
+  width: 100%;
+  color: #777;
+  font-size: 0.85rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-    ul.meta li {
-      float: left;
-      line-height: 1.8;
-    }
+ul.meta li {
+  float: left;
+  line-height: 1.8;
+}
 
-    ul.meta li:after {
-      content: "-";
-      padding: 0 6px;
-    }
+ul.meta li:after {
+  content: "-";
+  padding: 0 6px;
+}
 
-    ul.meta li:last-child:after {
-      display: none;
-      padding: 0;
-    }
+ul.meta li:last-child:after {
+  display: none;
+  padding: 0;
+}
 
-    ul.meta li a {
-      color: #777;
-    }
+ul.meta li a {
+  color: #777;
+}
 
-    ul.meta li i {
-      display: inline-block;
-      color: #929292;
-      padding-right: 5px;
-    }
+ul.meta li i {
+  display: inline-block;
+  color: #929292;
+  padding-right: 5px;
+}
 
 
 /*--------------------------------------------------------------
@@ -99,8 +99,8 @@ ul.meta {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
+  -webkit-animation: animate-preloader1s linear infinite;
+  animation: animate-preloader1s linear infinite;
 }
 
 @-webkit-keyframes animate-preloader {
@@ -164,7 +164,7 @@ ul.meta {
 @media screen and (min-width: 782px) {
   .sticky-header-enabled #wpadminbar ~ #header {
     top: 32px;
-}
+  }
 }
 
 
@@ -174,7 +174,6 @@ ul.meta {
 
 #header.header-scrolled {
   /* Sticky Header color after scroll */
-  
 }
 
 #header .logo {
@@ -307,9 +306,9 @@ ul.meta {
   }
   .nav-menu .menu-item-has-children .menu-item-has-children > a:after {
     font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f053";
-    }
+    font-weight: 900;
+    content: "\f053";
+  }
 }
 
 /* Mobile Navigation */
@@ -420,10 +419,10 @@ ul.meta {
 .comments-count-wrapper {}
 
 .comments-title {
-line-height: 1.4;
-font-size: 1.4rem;
-font-weight: 400;
-word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 1.4rem;
+  font-weight: 400;
+  word-wrap: break-word;
 }
 
 .comments-area {
@@ -473,4 +472,11 @@ word-wrap: break-word;
 
 .comment .children {
   margin-left: 1em;
+}
+
+/***********************
+**** Footer
+************************/
+#footer {
+  background: #fff;
 }

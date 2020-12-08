@@ -9,17 +9,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
   <div class="card mb-3">
-
-    <?php if (has_post_thumbnail()) {
-      ?>
-
-      <?php the_post_thumbnail('full', [
-        'class' => 'card-img-top']); ?>
-
-      <?php
-    } ?>
     <div class="card-body px-3 pb-0">
       <header id="entry-header">
+        <?php if (has_post_thumbnail()) {
+          the_post_thumbnail('full', [
+            'class' => 'mb-4']);
+        } ?>
         <h5 class="card-title"><?php the_title(); ?></h5>
         <p class="card-text">
           <small class="entry-meta text-muted">
