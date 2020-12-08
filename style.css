@@ -4,6 +4,7 @@ Author: Kazim, Huzaifa
 Author URI: http://www.webplover.com/about-us/
 Description: Plover theme is designed for webplover.com
 Version: 1.0.0
+GitHub Theme URI: kazimshah39/ploverwp
 Text Domain: ploverwp
 */
 
@@ -99,8 +100,8 @@ ul.meta li i {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  -webkit-animation: animate-preloader1s linear infinite;
-  animation: animate-preloader1s linear infinite;
+  -webkit-animation: animate-preloader1slinear infinite;
+  animation: animate-preloader1slinear infinite;
 }
 
 @-webkit-keyframes animate-preloader {
