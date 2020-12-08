@@ -12,9 +12,6 @@ Text Domain: ploverwp
 /*--------------------------------------------------------------
 # Global
 --------------------------------------------------------------*/
-.sticky-header-enabled #wpadminbar {
-  position: fixed !important;
-}
 body {
   background: #f5f5f5;
 }
@@ -158,23 +155,55 @@ ul.meta li i {
   padding: 15px 0;
 }
 
-.sticky-header-enabled #wpadminbar ~ #header {
+/* Sticky Header */
+
+.all-devices-sticky-header-enabled #header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+@media (max-width: 575.98px) {
+  .mobile-sticky-header-enabled #header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-sticky-header-enabled #header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+  }
+}
+
+.mobile-sticky-header-enabled #wpadminbar,
+.all-devices-sticky-header-enabled #wpadminbar {
+  position: fixed !important;
+}
+
+.mobile-sticky-header-enabled #wpadminbar ~ #header {
   top: 46px;
 }
 
-@media screen and (min-width: 782px) {
-  .sticky-header-enabled #wpadminbar ~ #header {
+@media (min-width: 782px) {
+  .all-devices-sticky-header-enabled #wpadminbar ~ #header,
+  .desktop-sticky-header-enabled #wpadminbar ~ #header {
     top: 32px;
   }
 }
 
+#header.header-scrolled {
+  /* Sticky Header color after scroll */
+}
 
 .site-title a, .site-description, .nav-menu li a, .mobile-nav-toggle i {
   color: #000000;
-}
-
-#header.header-scrolled {
-  /* Sticky Header color after scroll */
 }
 
 #header .logo {

@@ -6,9 +6,23 @@ if (! function_exists('ploverwp_sticky_header_config')) {
       [
         'control' => 'checkbox',
         'id' => 'ploverwp_sticky_header_status',
-        'transport' => 'postMessage',
+        'transport' => 'refresh',
         'label' => 'Enable Sticky Header',
         'description' => '',
+        'section' => 'section-sticky-header',
+      ],
+      [
+        'control' => 'select',
+        'id' => 'ploverwp_sticky_header_location',
+        'transport' => 'refresh',
+        'label' => 'Enable On',
+        'description' => '',
+        'default' => 'desktop',
+        'choices' => [
+          'desktop' => 'Desktop',
+          'mobile' => 'Mobile',
+          'both' => 'Desktop + Mobile'
+        ],
         'section' => 'section-sticky-header',
       ],
     ];

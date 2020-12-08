@@ -42,9 +42,7 @@ if (! function_exists('ploverwp_get_customizer_css')) {
     ob_start();
 
     foreach (ploverwp_get_elements() as $val) {
-      // foreach ($nested as $val) {
       ploverwp_generate_css($val['selector'], $val['style'], sanitize_hex_color(get_theme_mod($val['setting'])));
-      // }
     }
     // Return the results.
     return ob_get_clean();

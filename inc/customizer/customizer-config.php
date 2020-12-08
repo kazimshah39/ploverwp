@@ -89,6 +89,31 @@ if (! function_exists('ploverwp_customizer_config')) {
 
           break;
 
+        case "select":
+
+          $wp_customize->add_setting(
+            $val['id'],
+            [
+              'default' => $val['default'],
+              // 'sanitize_callback' => 'sanitize_hex_color',
+              'transport' => $val['transport'],
+            ]
+          );
+
+
+          $wp_customize->add_control(
+            $val['id'],
+            [
+              'type' => 'select',
+              'label' => __($val['label'], 'ploverwp'),
+              'description' => __($val['description'], 'ploverwp'),
+              'choices' => $val['choices'],
+              'section' => $val['section']
+            ]
+          );
+
+          break;
+
         case "divider":
 
           $wp_customize->add_control(new PloverWP_Control_Divider(

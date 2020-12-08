@@ -40,12 +40,10 @@
   }
 
 
-
   if ($('body').hasClass("sticky-header-enabled")) {
 
     // Toggle .header-scrolled class to #header when page is scrolled
 
-    $('#header').addClass('sticky-top');
     $(window).scroll(function() {
       if ($(this).scrollTop() > 100) {
         $('#header').addClass('header-scrolled');

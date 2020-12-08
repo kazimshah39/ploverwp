@@ -44,7 +44,19 @@ add_action('customize_register', 'ploverwp_customizer_config');
 
 add_filter('body_class', function ($classes) {
   if (get_theme_mod('ploverwp_sticky_header_status')) {
-    $classes[] = 'sticky-header-enabled';
+
+    switch (get_theme_mod('ploverwp_sticky_header_location')) {
+      case "mobile":
+        $classes[] = 'mobile-sticky-header-enabled';
+        break;
+      case "desktop":
+        $classes[] = 'desktop-sticky-header-enabled';
+        break;
+      case "both":
+        $classes[] = 'all-devices-sticky-header-enabled';
+        break;
+    }
+
   }
   return $classes;
 });
@@ -63,14 +75,3 @@ add_action('wp_footer', 'show_template');
 // ***
 
 //remove_theme_mods();
-/*
-foreach (ploverwp_get_settings_and_controls() as $hh) {
-  foreach ($hh as $jj) {
-    // print_r($hh);
-    echo $jj['id'];
-    echo "<hr>";
-  }
-}
-*/
-//print_r(ploverwp_get_elements());
-//echo ploverwp_get_elements()['style'];
