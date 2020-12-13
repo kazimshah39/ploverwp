@@ -8,7 +8,6 @@ GitHub Theme URI: kazimshah39/ploverwp
 Text Domain: ploverwp
 */
 
-
 /*--------------------------------------------------------------
 # Global
 --------------------------------------------------------------*/
@@ -28,7 +27,6 @@ img {
 a {
   text-decoration: none;
 }
-
 
 /*--------------------------------------------------------------
 # Post Meta
@@ -86,6 +84,12 @@ ul.meta li i {
   background: #37517e;
 }
 
+.preloader-transition {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 400ms, visibility 400ms;
+}
+
 #preloader:before {
   content: "";
   position: fixed;
@@ -97,8 +101,8 @@ ul.meta li i {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  -webkit-animation: animate-preloader1slinear infinite;
-  animation: animate-preloader1slinear infinite;
+  -webkit-animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1s linear infinite;
 }
 
 @-webkit-keyframes animate-preloader {
@@ -164,12 +168,24 @@ ul.meta li i {
   z-index: 1020;
 }
 
-@media (max-width: 575.98px) {
+.all-devices-sticky-header-enabled #header.header-scrolled {
+  /**/
+  /*background: rgba(255, 255, 255, 0.9);*/
+  background: red;
+}
+
+
+
+@media (max-width: 767.98px) {
   .mobile-sticky-header-enabled #header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
+}
+  .mobile-sticky-header-enabled #header.header-scrolled {
+    /**/
+    background: green;
   }
 }
 
@@ -180,6 +196,11 @@ ul.meta li i {
     top: 0;
     z-index: 1020;
   }
+
+  .desktop-sticky-header-enabled #header.header-scrolled {
+    /**/
+    background: blue;
+  }
 }
 
 .mobile-sticky-header-enabled #wpadminbar,
@@ -187,20 +208,22 @@ ul.meta li i {
   position: fixed !important;
 }
 
-.mobile-sticky-header-enabled #wpadminbar ~ #header {
+
+
+@media (max-width: 782px) {
+.mobile-sticky-header-enabled #wpadminbar ~ #header,
+.all-devices-sticky-header-enabled #wpadminbar ~ #header {
   top: 46px;
 }
+}
 
-@media (min-width: 782px) {
+@media (min-width: 783px) {
   .all-devices-sticky-header-enabled #wpadminbar ~ #header,
   .desktop-sticky-header-enabled #wpadminbar ~ #header {
     top: 32px;
   }
 }
 
-#header.header-scrolled {
-  /* Sticky Header color after scroll */
-}
 
 .site-title a, .site-description, .nav-menu li a, .mobile-nav-toggle i {
   color: #000000;

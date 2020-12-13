@@ -43,8 +43,10 @@ add_action('customize_register', 'ploverwp_customizer_config');
 // Body Classes
 
 add_filter('body_class', function ($classes) {
+
   if (get_theme_mod('ploverwp_sticky_header_status')) {
 
+    $classes[] = 'sticky-header-enabled';
     switch (get_theme_mod('ploverwp_sticky_header_location')) {
       case "mobile":
         $classes[] = 'mobile-sticky-header-enabled';

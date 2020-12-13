@@ -46,6 +46,7 @@
         'theme_location' => 'primary',
         'depth' => 0, // 1 = no dropdowns, 2 = with dropdowns.
         'container' => 'nav',
+        'container_id' => 'nav-menu',
         'container_class' => 'nav-menu d-none d-md-block',
       ]);
       ?>

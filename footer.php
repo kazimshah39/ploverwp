@@ -131,7 +131,7 @@ _x('Y ', 'copyright date format', 'ploverwp')
 
 
 <span class="back-to-top"><i class="fas fa-arrow-up"></i></span>
-<!-- <div id="preloader"></div> -->
+<!--<div id="preloader"></div>-->
 
 <?php wp_footer(); ?>
 

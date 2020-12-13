@@ -1,93 +1,93 @@
-(function($) {
+const body = document.querySelector('body')
+const navMenu = document.querySelector('#nav-menu')
+const header = document.querySelector('#header')
+const innerHeader = document.querySelector('#header .header-inner')
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle')
+const mobileNavToggleIcon = document.querySelector('.mobile-nav-toggle i')
+const mobileNavOverlay = document.querySelector('.mobile-nav-overly')
+const backToTop = document.querySelector('.back-to-top')
 
+if (navMenu) {
 
-  // Mobile Navigation
+  // Clone nav menu for mobile
+  const mobNavMenu = navMenu.cloneNode(true)
+  mobNavMenu.className = 'mobile-nav d-md-none'
+  innerHeader.append(mobNavMenu)
 
-  if ($('.nav-menu').length) {
-    var $mobile_nav = $('.nav-menu').clone().prop({
-      class: 'mobile-nav d-md-none'
-    });
-    $('#header .header-inner').append($mobile_nav);
-
-    $(document).on('click',
-      '.mobile-nav-toggle',
-      function(e) {
-        $('body').toggleClass('mobile-nav-active');
-        $('.mobile-nav-toggle i').toggleClass('fa-bars fa-times');
-        $('.mobile-nav-overly').toggle();
-      });
-
-    $(document).on('click',
-      '.mobile-nav .menu-item-has-children > a',
-      function(e) {
-        e.preventDefault();
-        $(this).next().slideToggle(300);
-        $(this).parent().toggleClass('current-m-item');
-      });
-
-    $(document).click(function(e) {
-      var container = $(".mobile-nav, .mobile-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('fa-bars fa-times');
-          $('.mobile-nav-overly').fadeOut();
-        }
-      }
-    });
-  } else if ($(".mobile-nav, .mobile-nav-toggle").length) {
-    $(".mobile-nav, .mobile-nav-toggle").hide();
+  // Toggle Mob Menu
+  function toggleMobMenu() {
+    mobileNavToggleIcon.classList.toggle('fa-bars')
+    mobileNavToggleIcon.classList.toggle('fa-times')
+    mobileNavOverlay.classList.toggle('d-block')
+    body.classList.toggle('mobile-nav-active')
   }
 
+  mobileNavToggle.addEventListener('click', () => {
+    toggleMobMenu()
+  })
 
-  if ($('body').hasClass("sticky-header-enabled")) {
+  mobileNavOverlay.addEventListener('click', () => {
+    toggleMobMenu()
+  })
 
-    // Toggle .header-scrolled class to #header when page is scrolled
 
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 100) {
-        $('#header').addClass('header-scrolled');
+  // preventDefault when click on menu item which have childs
+  document.querySelectorAll('.mobile-nav .menu-item-has-children > a').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.target.nextElementSibling.classList.toggle('d-block')
+      e.target.parentNode.classList.toggle('current-m-item')
+    })
+  })
+
+  // Sticky Header
+  window.addEventListener('scroll', () => {
+    if (body.classList.contains('sticky-header-enabled')) {
+      if (this.scrollY > 100) {
+        header.classList.add('header-scrolled')
       } else {
-        $('#header').removeClass('header-scrolled');
+        header.classList.remove('header-scrolled')
       }
-    });
+    }
+  })
 
+  // Set .mobile-nav margin top
+  const adminBar = document.querySelector('#wpadminbar')
+  const mobNav = document.querySelector('.mobile-nav')
+
+  if (adminBar) {
+    mobNav.style.top = header.offsetHeight / 1.4 + adminBar.offsetHeight + 'px'
+  } else {
+    mobNav.style.top = header.offsetHeight / 1.4 + 'px'
   }
 
-  // Back to top button
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
+}
 
-  $('.back-to-top').click(function() {
+// Back to top button
+window.addEventListener('scroll', () => {
+  if (this.scrollY > 100) {
+    backToTop.classList.add('d-block')
+  } else {
+    backToTop.classList.remove('d-block')
+  }
+})
+
+// Go to top by click on back-to-top
+backToTop.addEventListener('click',
+  () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     })
   })
 
-  // Set .mobile-nav margin top
+// Preloader
+const preloader = document.querySelector('#preloader')
 
-  if ($("#wpadminbar").length) {
-    $(".mobile-nav").css("top", $("#header").outerHeight()/1.4+$("#wpadminbar").outerHeight());
-  } else {
-    $(".mobile-nav").css("top", $("#header").outerHeight()/1.4);
+window.onload = () => {
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('preloader-transition')
+    }, 100)
   }
-
-
-  // Preloader
-  $(window).on('load', function() {
-    if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function() {
-        $(this).remove();
-      });
-    }
-  });
-
-
-
-})(jQuery);
+}
