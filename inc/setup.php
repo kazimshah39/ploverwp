@@ -1,6 +1,7 @@
 <?php
 
-function ploverwp_setup_theme() {
+function ploverwp_setup_theme()
+{
 
   register_nav_menu('primary', __('Primary', 'ploverwp'));
 

@@ -1,9 +1,10 @@
 <?php
+
 /**
-* The Header for our theme.
-*
-* @package PloverWP WordPress theme
-*/
+ * The Header for our theme.
+ *
+ * @package PloverWP WordPress theme
+ */
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +32,7 @@
   <header id="header">
     <div class="header-inner container d-flex align-items-center justify-content-between">
 
-      <div>
+      <div class="ploverwp-site-identity">
         <h1 class="site-title m-0"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('title'); ?></a></h1>
         <p class="site-description m-0" itemprop="description">
           <?php bloginfo('description'); ?>

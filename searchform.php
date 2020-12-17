@@ -1,9 +1,10 @@
 <?php
+
 /**
-* Template for displaying search forms in PloverWP
-*
-* @package PloverWP
-*/
+ * Template for displaying search forms in PloverWP
+ *
+ * @package PloverWP
+ */
 
 ?>
 

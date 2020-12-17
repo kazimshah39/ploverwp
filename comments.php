@@ -56,7 +56,7 @@ if (have_comments()) {
     <input type="url" name="url" class="form-control mt-3" placeholder="Website">
     </br>'
       ],
-      'class_submit' => 'btn btn-outline-success',
+      'class_submit' => 'btn btn-outline-success mt-3',
       'title_reply' => __('Leave a Comment', 'ploverwp')
 
     ]);

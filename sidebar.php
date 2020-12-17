@@ -1,9 +1,10 @@
 <?php
+
 /**
-*  The template for displaying the sidebar.
-*
-* @package PloverWP
-*/
+ *  The template for displaying the sidebar.
+ *
+ * @package PloverWP
+ */
 ?>
 <div class="col-sm-4">
   <div id="sidebar">

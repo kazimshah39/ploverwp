@@ -1,9 +1,9 @@
 <?php
 
 /**
-* REQUIRED FILES
-* Include required files.
-*/
+ * REQUIRED FILES
+ * Include required files.
+ */
 
 require get_template_directory() . '/inc/front-end/enqueue.php';
 
@@ -25,8 +25,8 @@ require get_template_directory() . '/inc/customizer/enqueue.php';
 
 
 /**
-* Hooks
-*/
+ * Hooks
+ */
 
 add_action('wp_enqueue_scripts', 'ploverwp_front_end_scripts');
 
@@ -44,6 +44,7 @@ add_action('customize_register', 'ploverwp_customizer_config');
 
 add_filter('body_class', function ($classes) {
 
+  // Add 'sticky header enabled' classes to body
   if (get_theme_mod('ploverwp_sticky_header_status')) {
 
     $classes[] = 'sticky-header-enabled';
@@ -59,17 +60,23 @@ add_filter('body_class', function ($classes) {
         break;
     }
 
+    // Add 'sticky header shrink' classes to body
+    if (get_theme_mod('ploverwp_sticky_header_shrink')) {
+      $classes[] = 'sticky-header-shrink';
+    }
   }
+
+
   return $classes;
 });
 
 // For Development
 
-function show_template() {
+function show_template()
+{
   if (is_super_admin()) {
     global $template;
     print_r($template);
-
   }
 }
 add_action('wp_footer', 'show_template');

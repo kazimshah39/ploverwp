@@ -1,6 +1,7 @@
 <?php
 
-function ploverwp_widgets() {
+function ploverwp_widgets()
+{
   register_sidebar([
     'name' => __('Sidebar', 'ploverwp'),
     'id' => 'ploverwp_sidebar',

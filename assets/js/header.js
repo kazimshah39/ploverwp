@@ -43,7 +43,7 @@ if (navMenu) {
   // Sticky Header
   window.addEventListener('scroll', () => {
     if (body.classList.contains('sticky-header-enabled')) {
-      if (this.scrollY > 100) {
+      if (this.scrollY > 0) {
         header.classList.add('header-scrolled')
       } else {
         header.classList.remove('header-scrolled')
