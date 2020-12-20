@@ -7,7 +7,7 @@ if (!function_exists('ploverwp_sticky_header_colors_config')) {
             [
                 'control' => 'divider',
                 'id' => 'ploverwp-sticky-header-colors-divider',
-                'label' => 'Colors',
+                'label' => 'Sticky Header Colors',
                 'section' => 'section-sticky-header',
             ],
             [
