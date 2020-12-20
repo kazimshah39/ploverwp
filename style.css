@@ -168,11 +168,6 @@ ul.meta li i {
   z-index: 1030;
 }
 
-.all-devices-sticky-header-enabled #header.header-scrolled {
-  /*background: rgba(255, 255, 255, 0.9);*/
-  /* background: red; */
-}
-
 .all-devices-sticky-header-enabled #site-content {
   margin-top: 6.5rem;
 }
@@ -184,11 +179,6 @@ ul.meta li i {
     right: 0;
     left: 0;
     z-index: 1030;
-  }
-
-  .mobile-sticky-header-enabled #header.header-scrolled {
-    /**/
-    /* background: green; */
   }
 
   .mobile-sticky-header-enabled #site-content {
@@ -203,11 +193,6 @@ ul.meta li i {
     right: 0;
     left: 0;
     z-index: 1030;
-  }
-
-  .desktop-sticky-header-enabled #header.header-scrolled {
-    /**/
-    /* background: blue; */
   }
 
   .desktop-sticky-header-enabled #site-content {
@@ -242,7 +227,6 @@ ul.meta li i {
   .header-scrolled
   .ploverwp-site-identity {
   padding: 0.5em 0;
-  transition: padding 200ms;
 }
 
 .site-title {
@@ -299,10 +283,7 @@ ul.meta li i {
   position: relative;
   color: #fff;
   text-decoration: none;
-  transition: 0.3s;
   font-size: 15px;
-  letter-spacing: 0.5px;
-  font-weight: 500;
   font-family: "Open Sans", sans-serif;
 }
 

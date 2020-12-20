@@ -13,7 +13,7 @@ function ploverwp_front_end_scripts() {
   wp_add_inline_style('ploverwp-style', ploverwp_get_customizer_css());
 
 
-  wp_enqueue_script('header-js', get_theme_file_uri('/assets/js/header.js'), [], microtime(), true);
   wp_enqueue_script('main-js', get_theme_file_uri('/assets/js/main.js'), [], microtime(), true);
+  wp_enqueue_script('header-js', get_theme_file_uri('/assets/js/header.js'), [], microtime(), true);
 
 }

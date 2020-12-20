@@ -3,6 +3,7 @@
 require get_template_directory() . '/inc/customizer/colors/custom-css/base-colors-el.php';
 require get_template_directory() . '/inc/customizer/colors/custom-css/header-colors-el.php';
 require get_template_directory() . '/inc/customizer/colors/custom-css/footer-colors-el.php';
+require get_template_directory() . '/inc/customizer/header/custom-css/sticky-header-colors-el.php';
 
 
 if (! function_exists('ploverwp_get_elements')) {
@@ -13,6 +14,7 @@ if (! function_exists('ploverwp_get_elements')) {
       ploverwp_base_colors_el(),
       ploverwp_header_colors_el(),
       ploverwp_footer_colors_el(),
+      ploverwp_sticky_header_colors_el(),
     );
 
   }
