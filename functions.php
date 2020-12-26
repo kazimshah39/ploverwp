@@ -30,7 +30,7 @@ require get_template_directory() . '/inc/customizer/enqueue.php';
 
 add_action('wp_enqueue_scripts', 'ploverwp_front_end_scripts');
 
-add_action('admin_enqueue_scripts', 'ploverwp_back_end_scripts');
+add_action('customize_controls_enqueue_scripts', 'ploverwp_customizer_scripts');
 
 add_action('after_setup_theme', 'ploverwp_setup_theme');
 
@@ -83,4 +83,4 @@ add_action('wp_footer', 'show_template');
 
 // ***
 
-//remove_theme_mods();
+// remove_theme_mods();

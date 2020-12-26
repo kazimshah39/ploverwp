@@ -1,0 +1,30 @@
+/* Divivder */
+.customizer-divider {
+  background: #fff;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Dimensions */
+
+.ploverwp-dimensions {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.6rem;
+  align-items: center;
+}
+
+.ploverwp-dimensions span,
+.ploverwp-dimensions input {
+  flex-basis: 20%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.ploverwp-link-dimension-values {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+

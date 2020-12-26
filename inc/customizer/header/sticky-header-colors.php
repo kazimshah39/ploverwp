@@ -13,7 +13,7 @@ if (!function_exists('ploverwp_sticky_header_colors_config')) {
             [
                 'control' => 'color',
                 'id' => 'ploverwp_sticky_header_background_color',
-                'default' => '',
+                'default' => '#ffffff',
                 'transport' => 'postMessage',
                 'label' => 'Background Color',
                 'description' => '',

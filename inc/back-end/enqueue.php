@@ -1,8 +1,8 @@
 <?php
 
 
-function ploverwp_back_end_scripts() {
-
-  wp_enqueue_style('admin-css', get_theme_file_uri('/assets/css/admin/admin.css'), [], microtime());
-
+function ploverwp_customizer_scripts()
+{
+  wp_enqueue_style('ploverwp-customizer-css', get_theme_file_uri('/assets/css/admin/customizer.css'), [], microtime());
+  wp_enqueue_script('ploverwp-customizer-js', get_theme_file_uri('/assets/js/admin/customizer.js'), [], microtime());
 }

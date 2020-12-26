@@ -11,4 +11,4 @@ if (! defined('ABSPATH')) {
 
 $control_dir = get_template_directory() . '/inc/customizer/custom-controls';
 
-require $control_dir . '/class-ploverwp-divider-control.php';
+require $control_dir . '/divider.php';
