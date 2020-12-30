@@ -100,8 +100,8 @@ ul.meta li i {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
+  -webkit-animation: animate-preloader1s linear infinite;
+  animation: animate-preloader1s linear infinite;
 }
 
 @-webkit-keyframes animate-preloader {
@@ -224,8 +224,8 @@ ul.meta li i {
 }
 
 .sticky-header-enabled.sticky-header-shrink
-  .header-scrolled
-  .ploverwp-site-identity {
+.header-scrolled
+.ploverwp-site-identity {
   padding: 0.5em 0;
 }
 
@@ -478,8 +478,7 @@ ul.meta li i {
 /***********************
 **** Comments Area
 ************************/
-.comments-count-wrapper {
-}
+.comments-count-wrapper {}
 
 .comments-title {
   line-height: 1.4;
@@ -541,5 +540,22 @@ ul.meta li i {
 **** Footer
 ************************/
 #footer {
-  background: #fff;
+  background: #3a3a3a;
+  color: #fff;
+}
+
+.footer-widgets-area {
+  padding: 4.4rem 0;
+}
+
+.footer-copyright {
+  border-top: 1px solid #7a7a7a;
+  padding: 1.8rem 0;
+}
+
+@media (max-width: 991.98px) {
+  .footer-widgets-area {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
 }

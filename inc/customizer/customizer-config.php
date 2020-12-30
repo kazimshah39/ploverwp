@@ -126,6 +126,27 @@ if (! function_exists('ploverwp_customizer_config')) {
           ));
 
           break;
+
+        case "radio-image":
+
+          $wp_customize->add_setting(
+            $val['id'],
+            [
+              // 'sanitize_callback' => 'sanitize_hex_color',
+              'transport' => $val['transport'],
+            ]
+          );
+
+
+          $wp_customize->add_control(new PloverWP_Radio_Image_Control(
+            $wp_customize, $val['id'],
+            [
+              'choices' => $val['choices'],
+              'section' => $val['section']
+            ]
+          ));
+
+          break;
       }
     }
 

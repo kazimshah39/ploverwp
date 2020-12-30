@@ -1,134 +1,105 @@
 <?php
 
 /**
- * The template for displaying the footer.
- *
- * @package PloverWP WordPress theme
- */
+* The template for displaying the footer.
+*
+* @package PloverWP WordPress theme
+*/
 ?>
 
 </div>
-<!--/.container .site-->
+<!--/.container-lg #site-content-->
+
 
 <!-- Footer -->
 <footer id="footer">
 
+<?php
+$widget_layout = get_theme_mod('ploverwp_footer_widgets_layout');
 
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left mt-5">
+if ($widget_layout != 'footer-widgets-layout-disable') {
+?>
+<!-- Footer Container -->
+<div class="container-lg footer-widgets-area">
 
-        <!-- Grid row -->
-        <div class="row mt-3">
+<!-- Grid row -->
+<div class="row">
 
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+<?php
 
-                <!-- Content -->
-                <h6 class="text-uppercase font-weight-bold">Company name</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                    consectetur
-                    adipisicing elit.
-                </p>
+if ($widget_layout == 'footer-widgets-layout-1') {
+echo '<div class="col-md">';
+dynamic_sidebar('ploverwp_footer_widget_area_1');
+echo '</div>';
+}
 
-            </div>
-            <!-- Grid column -->
+for ($i = 1; $i <= 2; $i++) {
+if ($widget_layout == 'footer-widgets-layout-2') {
+echo '<div class="col-md">';
+dynamic_sidebar('ploverwp_footer_widget_area_' . $i);
+echo '</div>';
+}
+}
 
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+for ($i = 1; $i <= 3; $i++) {
+if ($widget_layout == 'footer-widgets-layout-3') {
+echo '<div class="col-md">';
+dynamic_sidebar('ploverwp_footer_widget_area_' . $i);
+echo '</div>';
+}
+}
 
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Products</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!">MDBootstrap</a>
-                </p>
-                <p>
-                    <a href="#!">MDWordPress</a>
-                </p>
-                <p>
-                    <a href="#!">BrandFlow</a>
-                </p>
-                <p>
-                    <a href="#!">Bootstrap Angular</a>
-                </p>
+for ($i = 1; $i <= 4; $i++) {
+if ($widget_layout == 'footer-widgets-layout-4') {
+echo '<div class="col-md">';
+dynamic_sidebar('ploverwp_footer_widget_area_' . $i);
+echo '</div>';
+}
+}
 
-            </div>
-            <!-- Grid column -->
+for ($i = 1; $i <= 5; $i++) {
+if ($widget_layout == 'footer-widgets-layout-5') {
+echo '<div class="col-md">';
+dynamic_sidebar('ploverwp_footer_widget_area_' . $i);
+echo '</div>';
+}
+}
+?>
 
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!">Your Account</a>
-                </p>
-                <p>
-                    <a href="#!">Become an Affiliate</a>
-                </p>
-                <p>
-                    <a href="#!">Shipping Rates</a>
-                </p>
-                <p>
-                    <a href="#!">Help</a>
-                </p>
 
-            </div>
-            <!-- Grid column -->
+</div>
+<!-- Grid row -->
 
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+</div>
+<!-- Footer Container -->
 
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US
-                </p>
-                <p>
-                    <i class="fas fa-envelope mr-3"></i> info@example.com
-                </p>
-                <p>
-                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88
-                </p>
-                <p>
-                    <i class="fas fa-print mr-3"></i> + 01 234 567 89
-                </p>
+<?php
+} ?>
 
-            </div>
-            <!-- Grid column -->
+<!-- Copyright -->
+<div class="footer-copyright text-center">
 
-        </div>
-        <!-- Grid row -->
+&copy;
+<?php
+echo date_i18n(
+/* translators: Copyright date format, see https://www.php.net/date */
+_x('Y ', 'copyright date format', 'ploverwp')
+);
+?>
+<a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
 
-    </div>
-    <!-- Footer Links -->
+<?php _e('Powered by ', 'ploverwp'); ?>
+<a href="<?php echo esc_url(__('https://www.webplover.com/', 'ploverwp')); ?>">
+<?php _e('WebPlover', 'ploverwp'); ?>
+</a>
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">
-
-        &copy;
-        <?php
-        echo date_i18n(
-            /* translators: Copyright date format, see https://www.php.net/date */
-            _x('Y ', 'copyright date format', 'ploverwp')
-        );
-        ?>
-        <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-
-        <?php _e('Powered by ', 'ploverwp'); ?>
-        <a href="<?php echo esc_url(__('https://www.webplover.com/', 'ploverwp')); ?>">
-            <?php _e('WebPlover', 'ploverwp'); ?>
-        </a>
-
-    </div>
-    <!-- Copyright -->
+</div>
+<!-- Copyright -->
 
 </footer>
 <!-- Footer -->
+
 
 
 <span class="back-to-top"><i class="fas fa-arrow-up"></i></span>

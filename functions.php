@@ -1,9 +1,9 @@
 <?php
 
 /**
- * REQUIRED FILES
- * Include required files.
- */
+* REQUIRED FILES
+* Include required files.
+*/
 
 require get_template_directory() . '/inc/front-end/enqueue.php';
 
@@ -25,8 +25,8 @@ require get_template_directory() . '/inc/customizer/enqueue.php';
 
 
 /**
- * Hooks
- */
+* Hooks
+*/
 
 add_action('wp_enqueue_scripts', 'ploverwp_front_end_scripts');
 
@@ -72,8 +72,7 @@ add_filter('body_class', function ($classes) {
 
 // For Development
 
-function show_template()
-{
+function show_template() {
   if (is_super_admin()) {
     global $template;
     print_r($template);
@@ -83,4 +82,4 @@ add_action('wp_footer', 'show_template');
 
 // ***
 
-// remove_theme_mods();
+//remove_theme_mods();

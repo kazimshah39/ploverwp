@@ -1,8 +1,7 @@
-#calendar_wrap table {
+.wp-calendar-table {
   width: 100%;
 }
 .widget_calendar td, .widget_calendar th  {
-color: #3a3a3a;
 word-break: break-word;
 border-collapse: separate;
 border-spacing: 0;

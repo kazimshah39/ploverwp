@@ -7,24 +7,22 @@
   text-align: center;
 }
 
-/* Dimensions */
-
-.ploverwp-dimensions {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.6rem;
-  align-items: center;
+/* Radio Image */
+.ploverwp-radio-image {
+  display: none !important;
 }
 
-.ploverwp-dimensions span,
-.ploverwp-dimensions input {
-  flex-basis: 20%;
-  box-sizing: border-box;
-  text-align: center;
+.ploverwp-radio-image+label {
+  display: inline-block;
+  margin: 0 12px 12px 0;
+}
+.ploverwp-radio-image+label svg {
+  width: 73px;
+  height: 49px;
 }
 
-.ploverwp-link-dimension-values {
-  background-color: #ffffff;
-  border-radius: 5px;
+.ploverwp-radio-image:checked+label svg {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 3px 0 rgba(0,133,186,.67);
 }
-
