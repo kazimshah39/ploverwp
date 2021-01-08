@@ -83,4 +83,4 @@ add_action('wp_footer', 'show_template');
 
 // ***
 
-remove_theme_mods();
+//remove_theme_mods();

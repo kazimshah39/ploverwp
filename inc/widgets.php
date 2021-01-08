@@ -14,15 +14,18 @@ function ploverwp_widgets() {
   $footer_layout = get_theme_mod('ploverwp_footer_widgets_layout');
   $columns = explode(',', $footer_layout);
 
-  foreach ($columns as $i => $column) {
-    register_sidebar([
-      'name' => sprintf(esc_html__('Footer Widget Area %s', 'ploverwp'), $i + 1),
-      'id' => 'ploverwp_footer_widget_area_' . ($i + 1),
-      'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-      'after_widget' => '</aside>',
-      'before_title' => '<div class="widget-title"><h5>',
-      'after_title' => '</h5></div>'
-    ]);
+  if ($footer_layout != '0') {
+
+    foreach ($columns as $i => $column) {
+      register_sidebar([
+        'name' => sprintf(esc_html__('Footer Widget Area %s', 'ploverwp'), $i + 1),
+        'id' => 'ploverwp_footer_widget_area_' . ($i + 1),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<div class="widget-title"><h5>',
+        'after_title' => '</h5></div>'
+      ]);
+    }
   }
 
 }
