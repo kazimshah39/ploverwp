@@ -1,10 +1,10 @@
 <?php
 
 /**
- * The Header for our theme.
- *
- * @package PloverWP WordPress theme
- */
+* The Header for our theme.
+*
+* @package PloverWP WordPress theme
+*/
 ?>
 
 <!DOCTYPE html>

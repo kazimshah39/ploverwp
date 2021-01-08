@@ -20,15 +20,20 @@ class PloverWP_Radio_Image_Control extends WP_Customize_Control
 
 
   public function render_content() {
-    ?>
 
-    <?php foreach ($this->choices as $key => $value) {
+    foreach ($this->choices as $key => $value) {
       ?>
-      <input class="ploverwp-radio-image" id="<?php echo esc_attr($key); ?>" type="radio" value="<?php echo esc_attr($key); ?>"
-      name="<?php echo esc_attr($this->id); ?>" <?php $this->link(); ?> />
-      <label for="<?php echo esc_attr($key); ?>" title="<?php echo esc_attr($value['title']); ?>"><?php echo $value['icon']; ?></label>
+      <input type="radio" name="<?php echo esc_attr($this->id); ?>" class="ploverwp-radio-image" id="<?php echo esc_attr($key); ?>" value="<?php echo esc_attr($value['value']); ?>" <?php $this->link(); ?>>
+      <label for="<?php echo esc_attr($key); ?>"><?php echo $value['icon']; ?></label>
       <?php
-    }
+    } ?>
+    <br><br>
+    <input type="radio" name="<?php echo esc_attr($this->id); ?>" value="" id="ploverwp-custom-footer-layout-button" <?php $this->link(); ?>>
+    <label for="ploverwp-custom-footer-layout-button">Custom</label>
+    <br><br>
+    <input type="text" placeholder="1,2,3" id="ploverwp-custom-footer-layout" <?php $this->link(); ?>>
+
+    <?php
   }
 
 

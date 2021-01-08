@@ -76,10 +76,11 @@ function show_template() {
   if (is_super_admin()) {
     global $template;
     print_r($template);
+    echo '<br>';
   }
 }
 add_action('wp_footer', 'show_template');
 
 // ***
 
-//remove_theme_mods();
+remove_theme_mods();

@@ -127,11 +127,12 @@ if (! function_exists('ploverwp_customizer_config')) {
 
           break;
 
-        case "radio-image":
+        case "footer-widgets-layout":
 
           $wp_customize->add_setting(
             $val['id'],
             [
+              'default' => $val['default'],
               // 'sanitize_callback' => 'sanitize_hex_color',
               'transport' => $val['transport'],
             ]
