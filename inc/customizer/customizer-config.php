@@ -6,6 +6,8 @@ require get_template_directory() . '/inc/customizer/config/get_sections.php';
 // Include Settings & Controls
 require get_template_directory() . '/inc/customizer/config/get_settings_and_controls.php';
 
+// Include validate_callback
+require get_template_directory() . '/inc/customizer/validate_callback.php';
 
 
 if (! function_exists('ploverwp_customizer_config')) {
@@ -135,6 +137,7 @@ if (! function_exists('ploverwp_customizer_config')) {
               'default' => $val['default'],
               // 'sanitize_callback' => 'sanitize_hex_color',
               'transport' => $val['transport'],
+              'validate_callback' => $val['validate_callback'],
             ]
           );
 

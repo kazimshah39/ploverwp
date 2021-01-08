@@ -14,6 +14,7 @@ if (!function_exists('ploverwp_footer_widgets_config')) {
         'id' => 'ploverwp_footer_widgets_layout',
         'default' => '1,1,1,1,1',
         'transport' => 'refresh',
+        'validate_callback' => 'footer_widget_layouts_validate',
         'section' => 'section-footer-widgets',
         'choices' => [
           'footer-widgets-layout-disable' => [
