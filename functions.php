@@ -77,6 +77,7 @@ function show_template() {
     global $template;
     print_r($template);
     echo '<br>';
+    echo get_theme_mod('ploverwp_footer_widgets_layout');
   }
 }
 add_action('wp_footer', 'show_template');
