@@ -151,6 +151,19 @@ if (! function_exists('ploverwp_customizer_config')) {
           ));
 
           break;
+
+        case "popover":
+
+          $wp_customize->add_control(new PloverWP_Control_Popover(
+            $wp_customize, $val['id'],
+            [
+              'content' => $val['content'],
+              'section' => $val['section'],
+              'settings' => []
+            ]
+          ));
+
+          break;
       }
     }
 

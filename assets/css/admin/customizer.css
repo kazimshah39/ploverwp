@@ -1,4 +1,6 @@
-/* Divivder */
+/************************
+  * Divivder
+  *************************/
 .customizer-divider {
   background: #fff;
   font-weight: bold;
@@ -7,7 +9,9 @@
   text-align: center;
 }
 
-/* Radio Image */
+/************************
+  * Radio Image
+  *************************/
 .ploverwp-radio-image {
   display: none !important;
 }
@@ -27,8 +31,41 @@
   box-shadow: 0 0 3px 0 rgba(0,133,186,.67);
 }
 
-/* Footer widgets layout */
-
+/************************
+  * Footer widgets layout
+  *************************/
 #ploverwp-custom-footer-layout {
   display: none;
+}
+
+/************************
+  * Popover
+  *************************/
+.ploverwp-popover-content {
+  background: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+}
+
+.ploverwp-popover-toggle {
+  width: fit-content;
+  margin-top: 0.9rem;
+  position: absolute;
+  right: 0.8rem;
+}
+
+.ploverwp-popover-toggle.close {
+  margin-top: -1.2rem;
+}
+
+.ploverwp-popover-arrow-down {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #333;
+  z-index: -1;
 }
