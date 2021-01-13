@@ -2,7 +2,7 @@
 
 /**
 
-* Customizer Control: radio image
+* Customizer Control: footer-widgets-layout
 *
 * @package PloverWP WordPress theme
 */
@@ -12,11 +12,11 @@ if (! defined('ABSPATH')) {
 }
 
 if (class_exists('WP_Customize_Control')) :
-class PloverWP_Radio_Image_Control extends WP_Customize_Control
+class PloverWP_Footer_Widgets_Layout_Control extends WP_Customize_Control
 {
 
 
-  public $type = 'radio-image';
+  public $type = 'footer-widgets-layout';
 
 
   public function render_content() {

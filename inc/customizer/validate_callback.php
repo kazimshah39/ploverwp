@@ -16,7 +16,11 @@ function footer_widget_layouts_validate($validity, $value) {
 
 
   if (array_sum(explode(',', $value)) > 12) {
-    $validity->add('invalid_footer_layout_length', esc_html__('Values sum should not greator than 12', 'ploverwp'));
+    $validity->add('footer_layout_sum_greator', esc_html__('Values sum should not greator than 12', 'ploverwp'));
+  }
+
+  if (array_sum(explode(',', $value)) < 12) {
+    $validity->add('footer_layout_sum_smaller', esc_html__('Values sum should be 12', 'ploverwp'));
   }
 
   if (count(explode(',', $value)) > 5) {

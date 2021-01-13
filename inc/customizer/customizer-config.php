@@ -142,7 +142,7 @@ if (! function_exists('ploverwp_customizer_config')) {
           );
 
 
-          $wp_customize->add_control(new PloverWP_Radio_Image_Control(
+          $wp_customize->add_control(new PloverWP_Footer_Widgets_Layout_Control(
             $wp_customize, $val['id'],
             [
               'choices' => $val['choices'],
