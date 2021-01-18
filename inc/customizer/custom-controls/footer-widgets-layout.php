@@ -23,7 +23,7 @@ class PloverWP_Footer_Widgets_Layout_Control extends WP_Customize_Control
 
     foreach ($this->choices as $key => $value) {
       ?>
-      <input type="radio" name="<?php echo esc_attr($this->id); ?>" class="ploverwp-radio-image" id="<?php echo esc_attr($key); ?>" value="<?php echo esc_attr($value['value']); ?>" <?php $this->link(); ?>>
+      <input type="radio" name="<?php echo esc_attr($this->id); ?>" class="ploverwp-radio-image ploverwp-footer-widgets-layout-image" id="<?php echo esc_attr($key); ?>" value="<?php echo esc_attr($value['value']); ?>" <?php $this->link(); ?>>
       <label for="<?php echo esc_attr($key); ?>"><?php echo $value['icon']; ?></label>
       <?php
     } ?>

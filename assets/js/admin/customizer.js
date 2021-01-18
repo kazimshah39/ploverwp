@@ -7,7 +7,7 @@ jQuery(function() {
   var custom_footer_layout = document.getElementById('ploverwp-custom-footer-layout')
   var custom_footer_layout_button = document.getElementById('ploverwp-custom-footer-layout-button')
 
-  document.querySelectorAll(".ploverwp-radio-image").forEach(item => {
+  document.querySelectorAll(".ploverwp-footer-widgets-layout-image").forEach(item => {
     item.addEventListener('change', () => {
       custom_footer_layout.style.display = 'none'
     })

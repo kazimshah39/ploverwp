@@ -19,7 +19,7 @@ function footer_widget_layouts_validate($validity, $value) {
     $validity->add('footer_layout_sum_greator', esc_html__('Values sum should not greator than 12', 'ploverwp'));
   }
 
-  if (array_sum(explode(',', $value)) < 12) {
+  if (array_sum(explode(',', $value)) < 12 && $value != 0 && $value != '1,1,1,1,1') {
     $validity->add('footer_layout_sum_smaller', esc_html__('Values sum should be 12', 'ploverwp'));
   }
 

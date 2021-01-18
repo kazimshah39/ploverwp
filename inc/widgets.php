@@ -11,7 +11,7 @@ function ploverwp_widgets() {
     'after_title' => '</h5>'
   ]);
 
-  $footer_layout = get_theme_mod('ploverwp_footer_widgets_layout');
+  $footer_layout = get_theme_mod('ploverwp_footer_widgets_layout', '1,1,1,1,1');
   $columns = explode(',', $footer_layout);
 
   if ($footer_layout != '0') {

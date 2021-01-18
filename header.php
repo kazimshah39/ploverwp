@@ -45,7 +45,7 @@
       <?php
       wp_nav_menu([
         'theme_location' => 'primary',
-        'depth' => 0, // 1 = no dropdowns, 2 = with dropdowns.
+        'depth' => 0,
         'container' => 'nav',
         'container_id' => 'nav-menu',
         'container_class' => 'nav-menu d-none d-md-block',
