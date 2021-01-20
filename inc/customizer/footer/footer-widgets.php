@@ -4,19 +4,19 @@ if (!function_exists('ploverwp_footer_widgets_config')) {
   function ploverwp_footer_widgets_config() {
     return [
       [
-        'control' => 'divider',
+        'control' => '3',
         'id' => 'ploverwp-footer-widgets-layout-divider',
         'label' => 'Layout',
         'section' => 'section-footer-widgets',
       ],
       [
-        'control' => 'popover',
+        'control' => '5',
         'id' => 'ploverwp_footer_widgets_layout_popover',
         'content' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum laudantium consequuntur perferendis sed ullam. Aperiam velit praesentium temporibus cupiditate aliquam, facilis magnam eos exercitationem ab error voluptatibus laudantium recusandae vel.',
         'section' => 'section-footer-widgets',
       ],
       [
-        'control' => 'footer-widgets-layout',
+        'control' => '4',
         'id' => 'ploverwp_footer_widgets_layout',
         'default' => '1,1,1,1,1',
         'transport' => 'refresh',

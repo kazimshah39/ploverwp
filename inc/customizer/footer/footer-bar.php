@@ -4,13 +4,13 @@ if (!function_exists('ploverwp_footer_bar_config')) {
   function ploverwp_footer_bar_config() {
     return [
       [
-        'control' => 'divider',
-        'id' => 'ploverwp_footerbar_layout',
+        'control' => '3',
+        'id' => 'ploverwp_footerbar_layout_divider',
         'label' => 'Layout',
         'section' => 'section-footer-bar',
       ],
       [
-        'control' => 'radio-image',
+        'control' => '6',
         'id' => 'ploverwp_footerbar_layout',
         'default' => '1',
         'transport' => 'postMessage',
@@ -31,18 +31,33 @@ if (!function_exists('ploverwp_footer_bar_config')) {
         ]
       ],
       [
-        'control' => 'divider',
-        'id' => 'ploverwp_footerbar_color',
+        'control' => '1',
+        'type' => 'textarea',
+        'id' => 'ploverwp_copyright_first_section',
+        'transport' => 'refresh',
+        'label' => 'Section 1',
+        'section' => 'section-footer-bar',
+      ],
+      [
+        'control' => '1',
+        'type' => 'textarea',
+        'id' => 'ploverwp_copyright_second_section',
+        'transport' => 'refresh',
+        'label' => 'Section 2',
+        'section' => 'section-footer-bar',
+      ],
+      [
+        'control' => '3',
+        'id' => 'ploverwp_footerbar_color_divider',
         'label' => 'Color',
         'section' => 'section-footer-bar',
       ],
       [
-        'control' => 'color',
-        'id' => 'ploverwp_footer_background_color',
+        'control' => '2',
+        'id' => 'ploverwp_footerbar_background_color',
         'default' => '#3a3a3a',
         'transport' => 'postMessage',
-        'label' => 'Footer Background Color',
-        'description' => '',
+        'label' => 'Footer Bar Background Color',
         'section' => 'section-footer-bar',
       ]
     ];

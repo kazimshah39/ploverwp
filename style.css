@@ -270,6 +270,8 @@ ul.meta li i {
 
 .nav-menu > ul {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav-menu > ul > li {
@@ -288,7 +290,8 @@ ul.meta li i {
 }
 
 .nav-menu a:hover,
-.nav-menu .current-menu-item > a {
+.nav-menu .current-menu-item > a,
+#nav-menu .current_page_item a {
   color: #47b2e4;
 }
 

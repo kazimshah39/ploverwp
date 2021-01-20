@@ -72,4 +72,53 @@ jQuery(function() {
     })
   })
 
+  /************************
+  * Hide Controls
+  *************************/
+  function hideControl(el, arr, pref) {
+    let element = document.getElementById(el)
+    if (element.checked) {
+      arr.forEach(item => {
+        document.getElementById(pref+item).style.display = 'none'
+      })
+    }
+
+    element.addEventListener('change', () => {
+      arr.forEach(item => {
+        document.getElementById(pref+item).style.display = 'none'
+      })
+    })
+  }
+
+  function showControl(el, arr, pref) {
+
+    el.forEach(item => {
+      document.getElementById(item).addEventListener('change',
+        () => {
+          arr.forEach(item => {
+            document.getElementById(pref+item).style.display = 'block'
+          })
+        })
+    })
+  }
+
+
+  // Hide controls if footer bar == none
+
+  var footerBarLayouts =
+  [
+    'footerbar-layout-1',
+    'footerbar-layout-2'
+  ]
+
+  var footerBarControls =
+  [
+    'ploverwp_copyright_first_section',
+    'ploverwp_copyright_second_section',
+  ]
+
+  hideControl('footerbar-layout-disable', footerBarControls, 'customize-control-')
+  showControl(footerBarLayouts, footerBarControls, 'customize-control-')
+
+  /* jQuery(function() { */
 });

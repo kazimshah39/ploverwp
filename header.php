@@ -43,14 +43,24 @@
       <button type="button" class="mobile-nav-toggle d-md-none"><i class="fas fa-bars"></i></button>
       <div class="mobile-nav-overly"></div>
       <?php
-      wp_nav_menu([
-        'theme_location' => 'primary',
-        'depth' => 0,
-        'container' => 'nav',
-        'container_id' => 'nav-menu',
-        'container_class' => 'nav-menu d-none d-md-block',
-      ]);
-      ?>
+      if (has_nav_menu('primary')) {
+        wp_nav_menu([
+          'theme_location' => 'primary',
+          'depth' => 0,
+          'container' => 'nav',
+          'container_id' => 'nav-menu',
+          'container_class' => 'nav-menu d-none d-md-block',
+        ]);
+      } else {
+        wp_page_menu([
+          'show_home' => true,
+          'container' => 'nav',
+          'menu_id' => 'nav-menu',
+          'menu_class' => 'nav-menu d-none d-md-block',
+        ]);
+      } ?>
+
+
 
     </div>
   </header>

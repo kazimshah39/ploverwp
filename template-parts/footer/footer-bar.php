@@ -1,6 +1,6 @@
 <div class="footer-copyright-container">
   <?php
-  if (get_theme_mod('ploverwp_footerbar_layout') != 0) {
+  if (get_theme_mod('ploverwp_footerbar_layout', '2') != 0) {
     ?>
     <div class="container-lg">
       <div class="row footer-copyright">
