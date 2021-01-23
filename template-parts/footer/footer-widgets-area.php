@@ -10,10 +10,10 @@ if ($footer_layout != '0') {
     <div class="row">
       <?php
       foreach ($columns as $i => $column) {
-        if ($column == '1,1,1,1,1') {
-          if (is_active_sidebar('ploverwp_footer_widget_area_5')) {
+        if ($footer_layout == '1,1,1,1,1') {
+          if (is_active_sidebar('ploverwp_footer_widget_area_' . ($i + 1))) {
             echo '<div class="col-md">';
-            dynamic_sidebar('ploverwp_footer_widget_area_5');
+            dynamic_sidebar('ploverwp_footer_widget_area_' . ($i + 1));
             echo '</div>';
           }
         } else {
