@@ -15,7 +15,6 @@
 <?php get_template_part('template-parts/footer/footer-widgets-area'); ?>
 
 <?php get_template_part('template-parts/footer/footer-bar'); ?>
-
 </footer>
 
 <span class="back-to-top"><i class="fas fa-arrow-up"></i></span>
