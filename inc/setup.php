@@ -13,4 +13,5 @@ function ploverwp_setup_theme() {
     'flex-width' => true,
     'flex-height' => true
   ]);
+  add_theme_support('woocommerce');
 }
