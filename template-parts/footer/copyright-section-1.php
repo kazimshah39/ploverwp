@@ -15,5 +15,9 @@ $replace_helper_strings = [
   '<a href="https://www.webplover.com/">WebPlover</a>'
 ];
 
-$copyright_txt = get_theme_mod('ploverwp_copyright_first_section');
+$default = $replace_helper_strings;
+array_splice($default, 3, 0, ' | Powered By');
+$default = 'Copyright ' . implode(' ', $default);
+
+$copyright_txt = get_theme_mod('ploverwp_copyright_first_section', $default);
 echo str_replace($helper_strings, $replace_helper_strings, $copyright_txt);
