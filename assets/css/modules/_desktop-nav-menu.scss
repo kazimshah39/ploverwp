@@ -1,0 +1,114 @@
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-menu a:hover,
+.nav-menu .current-menu-item > a,
+#nav-menu .current_page_item a {
+  color: #47b2e4;
+}
+
+.nav-menu .menu-item-has-children ul {
+  border-radius: 8px;
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  padding: 10px 0;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.nav-menu .menu-item-has-children:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.nav-menu .menu-item-has-children li {
+  min-width: 180px;
+  position: relative;
+}
+
+.nav-menu .menu-item-has-children ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  color: #0c3c53;
+}
+
+.nav-menu .menu-item-has-children ul a:hover,
+.nav-menu .menu-item-has-children ul .current-menu-item > a {
+  color: #47b2e4;
+}
+
+.nav-menu .menu-item-has-children > a:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f078";
+  padding-left: 5px;
+}
+
+.nav-menu .menu-item-has-children .menu-item-has-children ul {
+  top: 0;
+  left: calc(100% - 30px);
+}
+
+.nav-menu .menu-item-has-children .menu-item-has-children:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+}
+
+.nav-menu .menu-item-has-children .menu-item-has-children > a {
+  padding-right: 35px;
+}
+
+.nav-menu .menu-item-has-children .menu-item-has-children > a:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f054";
+  position: absolute;
+  right: 15px;
+}
+
+@media (max-width: 1366px) {
+  .nav-menu .menu-item-has-children .menu-item-has-children ul {
+    left: -90%;
+  }
+  .nav-menu .menu-item-has-children .menu-item-has-children:hover > ul {
+    left: -100%;
+  }
+  .nav-menu .menu-item-has-children .menu-item-has-children > a:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f053";
+  }
+}
