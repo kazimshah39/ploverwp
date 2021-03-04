@@ -1,9 +1,15 @@
 @import "modules/_global.scss";
-@import "modules/_header.scss";
-@import "modules/_desktop-nav-menu.scss";
-@import "modules/_mobile-nav-menu.scss";
-@import "modules/_post-meta.scss";
-@import "modules/_preloader.scss";
-@import "modules/_back-to-top-button.scss";
-@import "modules/_comments-area.scss";
-@import "modules/_footer.scss";
+
+/* Header */
+@import "modules/header/_header.scss";
+@import "modules/header/_desktop-nav-menu.scss";
+@import "modules/header/_mobile-nav-menu.scss";
+
+/* Main */
+@import "modules/main/_post-meta.scss";
+@import "modules/main/_preloader.scss";
+@import "modules/main/_back-to-top-button.scss";
+@import "modules/main/_comments-area.scss";
+
+/* Footer */
+@import "modules/footer/_footer.scss";
